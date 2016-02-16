@@ -1,0 +1,586 @@
+$white: #ffffff
+$black: #000000
+$yellow: #f8d21e
+
+=font-face($family, $path, $svg, $weight: normal, $style: normal)
+  @font-face
+    font-family: $family
+    src: url('#{$path}.eot')
+    src: url('#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg##{$svg}') format('svg')
+    font-weight: $weight
+    font-style: $style
+
++font-face('bebas', '../fonts/bebasneue-webfont', 'bebas')
++font-face('helveticalight', '../fonts/helvetica-neue-lt-com-47-light-condensed', 'helveticalight')
+
+a
+  color: $black
+
+a, a:hover, a:focus
+  outline: none !important
+
+a:hover
+  text-decoration: none
+
+*:focus
+  outline: none
+
+.show
+  display: block !important
+
+.left
+  float: left
+
+.right
+  float: right
+
+body
+  background-color: #ffffff
+  font-family: "bebas", Helvetica, sans-serif
+  font-size: 24px
+
+h1
+  font-family: "bebas", Helvetica, sans-serif
+  font-size: 55px
+  padding: 15px 0 0 30px
+  float: left
+  span
+    font-family: "helveticalight", Helvetica, sans-serif
+    font-size: 33px
+    padding: 0 0 0 20px
+
+div, a, ul, li, article, img
+  box-sizing: border-box
+
+.wrapper
+  max-width: 640px
+  top: 0
+  left: 0
+  border: 1px solid
+  height: 1136px
+  overflow: hidden
+  position: relative
+
+.container
+  width: 100%
+
+.inn
+  padding: 0 20px
+
+header
+  height: 92px
+  width: 100%
+  background-color: $white
+  position: relative
+
+  .top-menu
+    display: block
+    float: left
+
+    .top-menu-btn
+      background: transparent url(../img/top-menu-icon.png) no-repeat scroll 50% 50%
+      display: block
+      width: 92px
+      height: 92px
+      border-right: 1px solid $black
+      text-indent: -9999em
+    ul
+      display: none
+
+  .brand
+    background: transparent url(../img/top-menu-brand.png) no-repeat scroll 50% 50%
+    height: 132px
+    width: 132px
+    position: absolute
+    top: 0
+    right: 0
+    display: block
+    z-index: 10
+
+section
+  position: relative
+  clear: both
+  .tit-highlight
+    position: absolute
+    top: 18px
+    left: 0
+    background-color: $white
+    font-family: "bebas", Helvetica, sans-serif
+    font-size: 55px
+    padding: 8px 15px 8px 25px
+  .top
+    height: 80px
+
+.news-reel
+  overflow: hidden
+  height: 660px
+  li
+    float: left
+    width: 100%
+    display: block
+    .resume
+      padding: 40px 25px
+      font-family: "helveticalight", Helvetica, sans-serif
+      font-size: 30px
+      text-transform: uppercase
+
+.reel-items
+  text-align: center
+  li
+    background-color: $black
+    height: 5px
+    display: inline-block
+    width: 11%
+    padding: 0 0 0 .3%
+    text-indent: -9999px
+    &.current
+      background-color: $yellow
+    a
+      display: block
+
+#home-fixture
+  background: $black url(../img/bg-home-fixture.jpg) no-repeat scroll 0 0
+  height: 385px
+  padding: 30px 80px
+  .date
+    color: $white
+    font-size: 26px
+    padding: 0 0 20px 0
+  .teams
+    background: rgba($black, .8)
+    color: $white
+    display: table
+    margin: 0 0 30px 0
+    .team
+      width: 30%
+      text-align: center
+      display: table-cell
+      vertical-align: middle
+      img
+        width: 110px
+    .numbers
+      display: table-cell
+      width: 40%
+      text-align: center
+      font-size: 66px
+      vertical-align: middle
+      letter-spacing: 0.2em
+
+.reel-items
+  li
+    background-color: #c2c3c9
+
+#positions
+  .top
+    background: transparent url(../img/top-posiciones.jpg) no-repeat scroll 0 bottom
+    background-size: 100% auto
+
+.tabs
+  li
+    width: 33.3333%
+    display: inline-block
+    float: left
+    text-align: center
+    font-family: "helveticalight", Helvetica, sans-serif
+    font-size: 20px
+    margin: 5px 0 20px 0
+
+    a
+      text-decoration: none
+      padding: 10px 0
+      display: block
+      &:hover, &.current
+        background: transparent url(../img/tab-current.png) no-repeat scroll 50% bottom
+
+.table
+  display: none
+  width: 100%
+  font-family: "helveticalight", Helvetica, sans-serif
+  font-size: 20px
+  text-transform: uppercase
+  .hr
+    border-top: 3px solid $black
+    border-bottom: 3px solid $black
+    ul
+      display: table
+      width: 100%
+      li
+        display: table-cell
+        vertical-align: middle
+        height: 32px
+        line-height: 32px
+        text-align: center
+  .td
+    ul
+      display: table
+      width: 100%
+      &.golden
+        background-color: $yellow
+      li
+        display: table-cell
+        vertical-align: middle
+
+.table.tabla
+  .hr, .td
+    li
+      width: 8%
+      text-align: center
+    li.equipo
+      width: 28%
+    li.escudo
+      img
+        width: 100%
+    li.equipo
+      text-align: left
+
+.table.tabla
+  .td
+    li
+      padding: 8px 0
+
+.game.td
+  border-bottom: 3px solid #9a999e
+  padding: 10px 0
+  .date
+    text-align: center
+    font-size: 16px
+    color: #727176
+    padding-bottom: 15px
+  .team
+    width: 40%
+    &.first
+      text-align: left
+      span
+        float: right
+    &.second
+      text-align: right
+      span
+        float: left
+    span
+      margin: -5px 5px 0 5px
+      width: 12%
+      img
+        width: 100%
+  .score
+    width: 20%
+    letter-spacing: .2em
+    text-align: center
+
+#news
+  .top
+    background: transparent url(../img/top-noticias.jpg) no-repeat scroll 0 bottom
+    background-size: 100% auto
+  article
+    width: 100%
+    padding: 10px
+    border-bottom: 3px solid #9a999e
+    font-family: "helveticalight", Helvetica, sans-serif
+    font-size: 20px
+    .news-picture
+      width: 35%
+      float: left
+      img
+        width: 100%
+    .news-content
+      width: 65%
+      float: left
+      padding: 20px 0 0 5%
+      .resume
+        font-size: 14px
+        color: #5b5b5f
+  .news-sociales
+    background: transparent url(../img/timeline.png) repeat-y scroll 16px 0
+    position: relative
+    .more-news
+      display: block
+      width: 24px
+      height: 24px
+      position: absolute
+      top: -24px
+      left: 5px
+      background: transparent url(../img/more-news.png) no-repeat scroll 0 0
+      text-indent: -9999px
+      cursor: pointer
+    article
+      background-color: #efeff0
+      padding: 15px 40px 15px 60px
+      margin: 10px 0 10px 60px
+      width: auto
+      position: relative
+      .head
+        img
+          width: 40px
+          float: left
+          margin-left: -45px
+      .time
+        color: #5e5e5e
+        font-size: 14px
+        padding: 0 0 10px 0
+      .news-picture
+        width: 100%
+        img
+          width: 100%
+      .news-content
+        width: 65%
+        float: left
+        padding: 20px 0 0 5%
+        .resume
+          font-size: 14px
+          color: #5b5b5f
+      .arrow
+        width: 15%
+        height: 26px
+        display: block
+        position: absolute
+        top: 50%
+        left: -15%
+        &.facebook
+          background: transparent url(../img/arrow-facebook.png) no-repeat scroll right 50%
+        &.twitter
+          background: transparent url(../img/arrow-twitter.png) no-repeat scroll right 50%
+        &.youtube
+          background: transparent url(../img/arrow-youtube.png) no-repeat scroll right 50%
+
+#plantel
+  .top
+    background: transparent url(../img/top-noticias.jpg) no-repeat scroll 0 bottom
+    background-size: 100% auto
+
+  .player
+    display: table
+    width: 100%
+    margin: 10px 0
+    li
+      display: table-cell
+      vertical-align: middle
+    .avatar
+      width: 30%
+      img
+        width: 100%
+    .data
+      width: 50%
+      font-family: "helveticalight", Helvetica, sans-serif
+      font-size: 20px
+      padding: 0 0 0 25px
+      text-transform: uppercase
+    .position
+      width: 20%
+      font-size: 36px
+      p
+        display: inline-block
+        width: 55px
+        padding: 10px 0
+        color: #ffffff
+        background-color: $black
+        text-align: center
+
+.category
+  background-color: $black
+  display: inline-block
+  color: $white
+  font-size: 30px
+  padding: 8px 30px 8px 20px
+  margin: 15px 0
+
+.tit-highlight
+  .back
+    background: $white url(../img/arrow-back.png) no-repeat scroll 0 50%
+    display: block
+    padding-left: 45px
+    text-decoration: none
+
+#player
+  .top
+    background: transparent url(../img/top-noticias.jpg) no-repeat scroll 0 bottom
+    background-size: 100% auto
+  .avatar
+    width: 100%
+    background-color: $black
+    img
+      width: 100%
+  .details
+    background-color: $black
+    color: $white
+    font-family: "helveticalight", Helvetica, sans-serif
+    background: transparent url(../img/arrow-up.png) no-repeat scroll 100px 50
+    height: 45px
+    line-height: 45px
+    width: 100%
+    display: block
+    text-transform: uppercase
+    padding: 0 0 0 20px
+    margin-top: -5px
+    span
+      float: right
+      background-color: $white
+      color: $black
+      height: 45px
+      line-height: 45px
+      width: 45px
+      font-weight: bold
+      font-size: 35px
+      text-align: center
+  #infoplayer
+    font-family: "helveticalight", Helvetica, sans-serif
+    font-size: 20px
+    padding: 60px 0 30px 0
+    dd, dt
+      display: inline-block
+      float: left
+      text-transform: uppercase
+      line-height: 24px
+    dt
+      clear: both
+      padding-right: 5px
+
+.subtitle
+  text-transform: uppercase
+  padding: 20px 0
+
+#login
+  background: $black url(../img/bg-login.jpg) no-repeat scroll 0 0
+  background-size: cover
+  width: 100%
+  height: 100%
+  position: absolute
+
+#login .popup
+  .title
+    background: transparent url(../img/user-white.png) no-repeat scroll 0 50%
+    padding: 0 0 0 42px
+    float: left
+
+.popup
+  width: 80%
+  margin: 30% 10%
+  height: 40%
+  position: absolute
+  .title
+    text-transform: uppercase
+    font-size: 36px
+    color: $white
+
+  .close
+    float: right
+    width: 24px
+    height: 24px
+    display: block
+    background: transparent url(../img/close.png) no-repeat scroll 0 0
+    text-indent: -9999px
+    margin: 10px 0 0 0
+
+  .popup-body
+    background-color: $white
+    padding: 40px
+    clear: both
+
+label
+  font-family: "helveticalight", Helvetica, sans-serif
+  font-size: 23px
+  display: block
+  padding-bottom: 10px
+
+input
+  width: 100%
+  height: 55px
+  line-height: 55px
+
+.form-group
+  padding: 10px 0
+
+button
+  background-color: $black
+  color: $white
+  font-family: "helveticalight", Helvetica, sans-serif
+  display: block
+  width: 200px
+  margin: 10px auto
+  border: none
+
+.form-questions
+  border-top: 3px solid #87868a
+  padding: 25px 0
+  a
+    color: #87868A
+    text-decoration: none
+    border-top: 3px solid #87868a
+    border-bottom: 3px solid #87868a
+    padding: 5px 0
+
+/* tabbar */
+#tab-bar
+  background: rgba($black, .9)
+  font-family: "helveticalight", Helvetica, sans-serif
+  font-size: 17px
+  position: absolute
+  bottom: -222px
+  &.open
+    bottom: 0
+    a#tab-updown span
+      background-position: 0 -220px
+    a#tab-updown:hover span, a#tab-updown.current span
+      background-position: -65px -220px
+
+  .row
+    width: 100%
+
+  a
+    display: inline-block
+    width: 20%
+    text-align: center
+    color: $white
+    float: left
+    text-decoration: none
+    padding: 10px 0
+
+    span
+      background: transparent url(../img/tabbar.png) no-repeat
+      width: 65px
+      height: 55px
+      display: block
+      margin: 0 auto
+
+    &#tab-home span
+      background-position: 0 0
+    &#tab-home:hover span, &#tab-home.current span
+      background-position: -65px 0
+    &#tab-noticias span
+      background-position: 0 -55px
+    &#tab-noticias:hover span, &#tab-noticias.current span
+      background-position: -65px -55px
+    &#tab-tabla span
+      background-position: 0 -110px
+    &#tab-tabla:hover span, &#tab-tabla.current span
+      background-position: -65px -110px
+    &#tab-login span
+      background-position: 0 -165px
+    &#tab-login:hover span, &#tab-login.current span
+      background-position: -65px -165px
+    &#tab-updown span
+      background-position: 0 -605px
+    &#tab-updown:hover span, &#tab-updown.current span
+      background-position: -65px -605px
+    &#tab-plantel span
+      background-position: 0 -275px
+    &#tab-plantel:hover span, &#tab-plantel.current span
+      background-position: -65px -275px
+    &#tab-fotos span
+      background-position: 0 -330px
+    &#tab-fotos:hover span, &#tab-fotos.current span
+      background-position: -65px -330px
+    &#tab-compras span
+      background-position: 0 -385px
+    &#tab-compras:hover span, &#tab-compras.current span
+      background-position: -65px -385px
+    &#tab-ticket span
+      background-position: 0 -440px
+    &#tab-ticket:hover span, &#tab-ticket.current span
+      background-position: -65px -440px
+    &#tab-bohemiotv span
+      background-position: 0 -495px
+    &#tab-bohemiotv:hover span, &#tab-bohemiotv.current span
+      background-position: -65px -495px
+    &#tab-fixture span
+      background-position: 0 -550px
+    &#tab-fixture:hover span, &#tab-fixture.current span
+      background-position: -65px -550px
