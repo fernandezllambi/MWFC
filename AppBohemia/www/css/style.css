@@ -236,7 +236,7 @@ section .top {
     background-size: 100% auto;
 }
 
-.tabs li {
+._tabs li {
     width: 33.3333%;
     display: inline-block;
     float: left;
@@ -246,13 +246,13 @@ section .top {
     margin: 5px 0 20px 0;
 }
 
-.tabs li a {
+._tabs li a {
     text-decoration: none;
     padding: 10px 0;
     display: block;
 }
 
-.tabs li a:hover, .tabs li a.current {
+._tabs li a:hover, ._tabs li a.current {
     background: transparent url(../img/tab-current.png) no-repeat scroll 50% bottom;
 }
 
@@ -692,8 +692,9 @@ button {
     font-family: "helveticalight", Helvetica, sans-serif;
     font-size: 17px;
     position: fixed;
-    bottom: -56px;
+    bottom: -230px;
     z-index: 3;
+    width: 100%;
 }
 
 #tab-bar.open {
@@ -714,18 +715,18 @@ button {
 
 #tab-bar a {
     display: inline-block;
-    width: 20%;
+    width: 100%;
     text-align: center;
     color: #ffffff;
     float: left;
     text-decoration: none;
-    padding: 10px 0;
-    margin: 0 0.3em;
+    /*padding: 10px 0;*/
+    /*margin: 0 0.3em;*/
 }
 
 #tab-bar a span {
     background: transparent url(../img/tabbar.png) no-repeat;
-    width: 65px;
+    /*width: 65px;*/
     height: 55px;
     display: block;
     margin: 0 auto;
