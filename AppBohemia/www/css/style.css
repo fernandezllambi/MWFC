@@ -692,7 +692,7 @@ button {
     font-family: "helveticalight", Helvetica, sans-serif;
     font-size: 17px;
     position: fixed;
-    bottom: -230px;
+    bottom: -135px;
     z-index: 3;
     width: 100%;
 }
@@ -777,15 +777,15 @@ button {
 }
 
 #tab-bar a#tab-plantel:hover span, #tab-bar a#tab-plantel.current span {
-    background-position: -65px -275px;
+    background-position: -66px -275px;
 }
 
 #tab-bar a#tab-fotos span {
-    background-position: 0 -330px;
+    background-position: 0 -662px;
 }
 
 #tab-bar a#tab-fotos:hover span, #tab-bar a#tab-fotos.current span {
-    background-position: -65px -330px;
+    background-position: -64px -662px;
 }
 
 #tab-bar a#tab-compras span {

@@ -1,7 +1,7 @@
 /**
  * Created by Rod on 2/18/16.
  */
-angular.module('starter.directives', [])
+directives
     .directive('hideHeader', function(){
         return {
             restrict: 'A',

@@ -1,0 +1,58 @@
+div.container {
+    padding-bottom: 200px !important;
+}
+
+.tit-highlight.invert {
+    position: inherit;
+    background-color: black;
+    color: white;
+    width: 33%;
+    font-size: 1em;
+}
+
+#news.squad {
+
+}
+
+#news.squad .inn {
+    padding-top: 20px;
+}
+
+#news.squad article {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#news.squad article .news-content {
+    padding: 0;
+}
+
+#news.squad .number {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.fecha{
+    border-bottom: 2px solid #9a999e;
+}
+
+.fecha p.titulo {
+    font-size: 13px;
+    color: gray;
+    text-align: center;
+}
+
+.fecha .detalle p{
+    font-size: 15px;
+}
+
+.fecha .detalle .score{
+    text-align: center;
+}
+
+.fecha .detalle .score img{
+    width: 16px;
+}
