@@ -1,45 +1,56 @@
 <ion-view title="Home">
-    <ion-content overflow-scroll="true" padding="false">
-      <div class="wrapper">
-        <div class="container">
-          <section id="news" class="area-news">
-            <p class="tit-highlight">Noticias</p>
-            <ul class="news-reel">
-              <li>
-                <img src="img/news/news1.jpg"/>
-                <div class="resume">Boca le ganó a Montevideo Wanderers con un gol del debutante Osvaldo</div>
-              </li>
-            </ul>
-            <ul class="reel-items">
-              <li class="current"><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-            </ul>
-          </section>
-          <section id="home-fixture">
-            <ul class="date-reel">
-              <li>
-                <div class="date">Fecha 15 - 05/12 Complejo Rentistas</div>
-                <div class="teams clearfix">
-                  <div class="team"><img src="img/teams/rentistas.png"/></div>
-                  <div class="numbers">1:2</div>
-                  <div class="team"><img src="img/teams/wanderers.png"/></div>
+  <ion-content overflow-scroll="true" padding="false">
+    <div class="wrapper">
+      <div class="container">
+        <section id="news" class="area-news">
+          <p class="tit-highlight">Noticias</p>
+          <!--<ul class="news-reel">-->
+            <!--<li>-->
+              <!--<img src="img/news/news1.jpg"/>-->
+
+              <!--<div class="resume">Boca le ganó a Montevideo Wanderers con un gol del debutante Osvaldo</div>-->
+            <!--</li>-->
+          <!--</ul>-->
+          <ion-slides options="options" class="news-reel">
+              <ion-slide-page ng-repeat="new in news" >
+                <div>
+                    <img src="img/news/news1.jpg"/>
+
+                    <div class="resume">{{new.titulo}}</div>
                 </div>
-              </li>
-            </ul>
-            <ul class="reel-items">
-              <li class="current"><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-              <li><a href="#">-</a></li>
-            </ul>
-          </section>
-        </div>
+              </ion-slide-page>
+          </ion-slides>
+          <!--<ul class="reel-items">-->
+            <!--<li class="current"><a href="#">-</a></li>-->
+            <!--<li><a href="#">-</a></li>-->
+            <!--<li><a href="#">-</a></li>-->
+            <!--<li><a href="#">-</a></li>-->
+            <!--<li><a href="#">-</a></li>-->
+            <!--<li><a href="#">-</a></li>-->
+            <!--<li><a href="#">-</a></li>-->
+            <!--<li><a href="#">-</a></li>-->
+          <!--</ul>-->
+        </section>
+        <section id="home-fixture">
+          <ul class="date-reel">
+            <li>
+              <div class="date">Fecha 15 - 05/12 Complejo Rentistas</div>
+              <div class="teams clearfix">
+                <div class="team"><img src="img/teams/rentistas.png"/></div>
+                <div class="numbers">1:2</div>
+                <div class="team"><img src="img/teams/wanderers.png"/></div>
+              </div>
+            </li>
+          </ul>
+          <ul class="reel-items">
+            <li class="current"><a href="#">-</a></li>
+            <li><a href="#">-</a></li>
+            <li><a href="#">-</a></li>
+            <li><a href="#">-</a></li>
+          </ul>
+        </section>
       </div>
-    </ion-content>
+    </div>
+
+  </ion-content>
 </ion-view>

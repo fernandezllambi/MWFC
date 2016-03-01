@@ -6,9 +6,7 @@
         <p class="tit-highlight">Posiciones</p>
         <!-- tabs -->
         <ul class="_tabs clearfix">
-          <li><a href="go_anual" title="anual">Anual</a></li>
-          <li><a href="go_clausura" title="clausura" class="current">Clausura</a></li>
-          <li><a href="go_apertura" title="apertura">Apertura</a></li>
+          <li><a title="anual">{{table.posiciones.campeonatoNombreAlternativo.__text}}</a></li>
         </ul>
         <div class="inn">
           <div class="table tabla show">
@@ -27,101 +25,17 @@
               </ul>
             </div>
             <div class="td">
-              <ul id="peñarol">
-                <li class="posicion">1.</li>
-                <li class="escudo"><img src="img/teams/penarol.png"></li>
-                <li class="equipo">Peñarol</li>
-                <li>8</li>
-                <li>5</li>
-                <li>1</li>
-                <li>2</li>
-                <li>16</li>
-                <li>8</li>
-                <li>16</li>
-              </ul>
-              <ul id="danubio">
-                <li class="posicion">2.</li>
-                <li class="escudo"><img src="img/teams/danubio.png"></li>
-                <li class="equipo">Danubio</li>
-                <li>8</li>
-                <li>5</li>
-                <li>1</li>
-                <li>2</li>
-                <li>12</li>
-                <li>8</li>
-                <li>16</li>
-              </ul>
-              <ul id="juventud">
-                <li class="posicion">3.</li>
-                <li class="escudo"><img src="img/teams/juventud.jpg"></li>
-                <li class="equipo">Juventud</li>
-                <li>8</li>
-                <li>4</li>
-                <li>2</li>
-                <li>2</li>
-                <li>16</li>
-                <li>12</li>
-                <li>14</li>
-              </ul>
-              <ul id="wanderers" class="golden">
-                <li class="posicion">13.</li>
-                <li class="escudo"><img src="img/teams/wanderers.png"></li>
-                <li class="equipo">Wanderers</li>
-                <li>8</li>
-                <li>2</li>
-                <li>3</li>
-                <li>3</li>
-                <li>9</li>
-                <li>8</li>
-                <li>9</li>
-              </ul>
-              <ul id="peñarol">
-                <li class="posicion">1.</li>
-                <li class="escudo"><img src="img/teams/penarol.png"></li>
-                <li class="equipo">Peñarol</li>
-                <li>8</li>
-                <li>5</li>
-                <li>1</li>
-                <li>2</li>
-                <li>16</li>
-                <li>8</li>
-                <li>16</li>
-              </ul>
-              <ul id="danubio">
-                <li>2.</li>
-                <li class="escudo"><img src="img/teams/danubio.png"></li>
-                <li class="equipo">Danubio</li>
-                <li>8</li>
-                <li>5</li>
-                <li>1</li>
-                <li>2</li>
-                <li>12</li>
-                <li>8</li>
-                <li>16</li>
-              </ul>
-              <ul id="juventud">
-                <li>3.</li>
-                <li class="escudo"><img src="img/teams/juventud.jpg"></li>
-                <li class="equipo">Juventud</li>
-                <li>8</li>
-                <li>4</li>
-                <li>2</li>
-                <li>2</li>
-                <li>16</li>
-                <li>12</li>
-                <li>14</li>
-              </ul>
-              <ul id="wanderers" class="golden">
-                <li>13.</li>
-                <li class="escudo"><img src="img/teams/wanderers.png"></li>
-                <li class="equipo">Wanderers</li>
-                <li>8</li>
-                <li>2</li>
-                <li>3</li>
-                <li>3</li>
-                <li>9</li>
-                <li>8</li>
-                <li>9</li>
+              <ul id="{{equipo._key}}" ng-repeat="equipo in table.posiciones.equipo" ng-class="{'golden' : equipo._key == 'wanderers'}">
+                <li class="posicion">{{equipo._orden}}.</li>
+                <li class="escudo"><img src="img/teams/{{equipo._key}}.png"></li>
+                <li class="equipo">{{equipo.nombre}}</li>
+                <li>{{equipo.jugados}}</li>
+                <li>{{equipo.ganados}}</li>
+                <li>{{equipo.empatados}}</li>
+                <li>{{equipo.perdidos}}</li>
+                <li>{{equipo.golesfavor}}</li>
+                <li>{{equipo.golescontra}}</li>
+                <li>{{equipo.difgol}}</li>
               </ul>
             </div>
           </div>

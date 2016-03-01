@@ -1,10 +1,2 @@
-angular.module('app.services', [])
-
-.factory('BlankFactory', [function(){
-
-}])
-
-.service('BlankService', [function(){
-
-}]);
+var services = angular.module('app.services', []);
 

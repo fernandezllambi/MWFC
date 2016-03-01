@@ -56,3 +56,11 @@ div.container {
 .fecha .detalle .score img{
     width: 16px;
 }
+
+.tit-highlight{
+  z-index: 2;
+}
+
+.swiper-container.swiper-container-horizontal.swiper-container-fade{
+  height: 373px;
+}
