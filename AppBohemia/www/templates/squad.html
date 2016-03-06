@@ -1,73 +1,92 @@
 <ion-view title="News">
-    <ion-content overflow-scroll="true" padding="false">
-        <div class="container">
-            <section id="news" class="squad">
-                <div class="top"></div>
-                <p class="tit-highlight">Plantel</p>
-                <div class="inn">
-                    <p class="tit-highlight invert">Arqueros</p>
-                    <div class="news-nuevas">
-                        <article class="clearfix" ng-repeat="arquero in squad.jugadores.Arquero">
-                            <div class="news-picture">
-                                <img src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg" alt="image1"/>
-                            </div>
-                            <div class="news-content">
-                                <div class="row">
-                                    <div class="col-80">
-                                      <p class="title">{{arquero.nombre}}</p>
-                                      <p>{{parseDate(arquero.fecnac)}}</p>
-                                    </div>
-                                    <div class="col-20">
-                                        <div class="number"><br/>{{arquero.dorsal}}<br/>&nbsp;</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+  <ion-content overflow-scroll="true" padding="false">
+    <div class="container">
+      <section id="news" class="squad">
+        <div class="top"></div>
+        <p class="tit-highlight">Plantel</p>
+
+        <div class="inn">
+          <p class="tit-highlight invert">Arqueros</p>
+
+          <div class="news-nuevas">
+            <ion-list>
+              <ion-item class="clearfix" ng-repeat="arquero in squad.jugadores.Arquero">
+                <div class="row">
+                  <div class="col-33">
+                    <img style="width: 100%" src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg"
+                         alt="image1"/>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-80">
+                        <p class="title">{{arquero.nombre}}</p>
+                        <p>{{parseDate(arquero.fecnac)}}</p>
+                      </div>
+                      <div class="col-20">
+                        <div class="number"><br/>{{arquero.dorsal}}<br/>&nbsp;</div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                <div class="inn">
-                    <p class="tit-highlight invert">Defensas</p>
-                    <div class="news-nuevas">
-                      <article class="clearfix" ng-repeat="defensa in squad.jugadores.Defensa">
-                        <div class="news-picture">
-                          <img src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg" alt="image1"/>
-                        </div>
-                        <div class="news-content">
-                          <div class="row">
-                            <div class="col-80">
-                              <p class="title">{{defensa.nombre}}</p>
-                              <p>{{parseDate(defensa.fecnac)}}</p>
-                            </div>
-                            <div class="col-20">
-                              <div class="number"><br/>{{defensa.dorsal}}<br/>&nbsp;</div>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-                    </div>
-                </div>
-              <div class="inn">
-                    <p class="tit-highlight invert">Delanteros</p>
-                    <div class="news-nuevas">
-                      <article class="clearfix" ng-repeat="delantero in squad.jugadores.Delantero">
-                        <div class="news-picture">
-                          <img src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg" alt="image1"/>
-                        </div>
-                        <div class="news-content">
-                          <div class="row">
-                            <div class="col-80">
-                              <p class="title">{{delantero.nombre}}</p>
-                              <p>{{parseDate(delantero.fecnac)}}</p>
-                            </div>
-                            <div class="col-20">
-                              <div class="number"><br/>{{delantero.dorsal}}<br/>&nbsp;</div>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-                    </div>
-                </div>
-            </section>
+              </ion-item>
+            </ion-list>
+          </div>
         </div>
-    </ion-content>
+        <div class="inn">
+          <p class="tit-highlight invert">Defensas</p>
+
+          <div class="news-nuevas">
+            <ion-list>
+              <ion-item class="clearfix" ng-repeat="defensa in squad.jugadores.Defensa">
+                <div class="row">
+                  <div class="col-33">
+                    <img style="width: 100%" src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg"
+                         alt="image1"/>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-80">
+                        <p class="title">{{defensa.nombre}}</p>
+                        <p>{{parseDate(defensa.fecnac)}}</p>
+                      </div>
+                      <div class="col-20">
+                        <div class="number"><br/>{{defensa.dorsal}}<br/>&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+        <div class="inn">
+          <p class="tit-highlight invert">Delanteros</p>
+
+          <div class="news-nuevas">
+            <ion-list>
+              <ion-item class="clearfix" ng-repeat="delantero in squad.jugadores.Delantero">
+                <div class="row">
+                  <div class="col-33">
+                    <img style="width: 100%" src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg"
+                         alt="image1"/>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-80">
+                        <p class="title">{{delantero.nombre}}</p>
+                        <p>{{parseDate(delantero.fecnac)}}</p>
+                      </div>
+                      <div class="col-20">
+                        <div class="number"><br/>{{delantero.dorsal}}<br/>&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </section>
+    </div>
+  </ion-content>
 </ion-view>

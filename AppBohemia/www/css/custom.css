@@ -1,13 +1,13 @@
 div.container {
-    padding-bottom: 200px !important;
+  padding-bottom: 200px !important;
 }
 
 .tit-highlight.invert {
-    position: inherit;
-    background-color: black;
-    color: white;
-    width: 33%;
-    font-size: 1em;
+  position: inherit;
+  background-color: black;
+  color: white;
+  width: 33%;
+  font-size: 1em;
 }
 
 #news.squad {
@@ -15,71 +15,73 @@ div.container {
 }
 
 #news.squad .inn {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
-#news.squad article {
-    padding-left: 20px;
-    padding-right: 20px;
+/*#news.squad article {*/
+/*padding-left: 20px;*/
+/*padding-right: 20px;*/
+/*}*/
+
+#news.squad .news-content {
+  padding: 0;
 }
 
-#news.squad article .news-content {
-    padding: 0;
-}
-
-#news.squad article .news-content p.title{
-  margin-top: 20px;
+#news.squad .news-nuevas p.title {
+  font-size:22px;
+  word-break: normal;
+  white-space: normal;
 }
 
 #news.squad .number {
-    text-align: center;
-    background-color: black;
-    color: white;
-    font-weight: bolder;
-    font-size: 30px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  font-size: 30px;
 }
 
-.fecha{
-    border-bottom: 2px solid #9a999e;
+.fecha {
+  border-bottom: 2px solid #9a999e;
 }
 
 .fecha p.titulo {
-    font-size: 13px;
-    color: gray;
-    text-align: center;
+  font-size: 13px;
+  color: gray;
+  text-align: center;
 }
 
-.fecha .detalle p{
-    font-size: 15px;
+.fecha .detalle p {
+  font-size: 15px;
 }
 
-.fecha .detalle .score{
-    text-align: center;
+.fecha .detalle .score {
+  text-align: center;
 }
 
-.fecha .detalle .score img{
-    width: 16px;
+.fecha .detalle .score img {
+  width: 16px;
 }
 
-.tit-highlight{
+.tit-highlight {
   z-index: 2;
 }
 
-.swiper-container.swiper-container-horizontal.swiper-container-fade{
+.swiper-container.swiper-container-horizontal.swiper-container-fade {
   height: 373px;
 }
 
-form.login input[type='text'], form.login input[type='password']{
+form.login input[type='text'], form.login input[type='password'] {
   border: 1px solid lightgray;
   height: 55px;
   font-size: 24px;
 }
 
-form.login p.error{
+form.login p.error {
   font-size: 16px;
   color: darkred;
 }
 
-.popup-alert .popup{
+.popup-alert .popup {
   background-color: white;
 }
