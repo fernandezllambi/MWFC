@@ -19,12 +19,16 @@ div.container {
 }
 
 #news.squad article {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #news.squad article .news-content {
     padding: 0;
+}
+
+#news.squad article .news-content p.title{
+  margin-top: 20px;
 }
 
 #news.squad .number {
@@ -63,4 +67,19 @@ div.container {
 
 .swiper-container.swiper-container-horizontal.swiper-container-fade{
   height: 373px;
+}
+
+form.login input[type='text'], form.login input[type='password']{
+  border: 1px solid lightgray;
+  height: 55px;
+  font-size: 24px;
+}
+
+form.login p.error{
+  font-size: 16px;
+  color: darkred;
+}
+
+.popup-alert .popup{
+  background-color: white;
 }

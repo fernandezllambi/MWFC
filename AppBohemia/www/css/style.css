@@ -139,7 +139,7 @@ section .tit-highlight {
   background-color: #ffffff;
   font-family: "bebas", Helvetica, sans-serif;
   font-size: 30px;
-  padding: 5px 15px;
+  padding: 5px 12px;
 }
 
 section .top {
@@ -610,26 +610,26 @@ section .top {
   position: absolute;
 }
 
-#login .popup .title {
+#login ._popup .title {
   background: transparent url(../img/user-white.png) no-repeat scroll 0 50%;
   padding: 15px 0 0 42px;
   float: left;
 }
 
-.popup {
+._popup {
   width: 80%;
   margin: 10%;
   height: 40%;
   position: absolute;
 }
 
-.popup .title {
+._popup .title {
   text-transform: uppercase;
   font-size: 20px;
   color: #ffffff;
 }
 
-.popup .close {
+._popup .close {
   float: right;
   width: 24px;
   height: 24px;
@@ -639,7 +639,7 @@ section .top {
   margin: 10px 0 15px 0;
 }
 
-.popup .popup-body {
+._popup .popup-body {
   background-color: #ffffff;
   padding: 40px;
   clear: both;
