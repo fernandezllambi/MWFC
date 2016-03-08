@@ -11,7 +11,7 @@
           <div class="news-nuevas">
             <ion-list>
               <ion-item class="clearfix" ng-repeat="arquero in squad.jugadores.Arquero">
-                <div class="row">
+                <div class="row" ui-sref="squadDetail({ jugador: arquero })">
                   <div class="col-33">
                     <img style="width: 100%" src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg"
                          alt="image1"/>
@@ -38,7 +38,7 @@
           <div class="news-nuevas">
             <ion-list>
               <ion-item class="clearfix" ng-repeat="defensa in squad.jugadores.Defensa">
-                <div class="row">
+                <div class="row" ui-sref="squadDetail({ jugador: defensa })">
                   <div class="col-33">
                     <img style="width: 100%" src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg"
                          alt="image1"/>
@@ -65,7 +65,7 @@
           <div class="news-nuevas">
             <ion-list>
               <ion-item class="clearfix" ng-repeat="delantero in squad.jugadores.Delantero">
-                <div class="row">
+                <div class="row" ui-sref="squadDetail({ jugador: delantero })">
                   <div class="col-33">
                     <img style="width: 100%" src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg"
                          alt="image1"/>

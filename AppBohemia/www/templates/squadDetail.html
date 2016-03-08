@@ -1,0 +1,51 @@
+<ion-view title="News">
+  <ion-content overflow-scroll="true" padding="false">
+    <div class="container">
+      <section id="news" class="squad jugador">
+        <div class="top"></div>
+        <p class="tit-highlight"><i class="icon ion-chevron-left" ui-sref="squad"></i>&nbsp;&nbsp;{{jugador.nombre}}</p>
+        <div class="row">
+          <div class="col">
+            <img style="width: 100%" src="http://mwfc.com.uy/wp-content/uploads/2015/02/221-220x250.jpg" alt="image1"/>
+          </div>
+        </div>
+        <div class="row seccion">
+          <div class="col titulo">Detalles &nbsp;<i class="icon ion-chevron-up"></i></div>
+          <div class="col-10 dorsal">{{jugador.dorsal}}</div>
+        </div>
+        <div class="row">
+          <div class="col-33"></div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col-33"><label>Nombre:</label></div>
+          <div class="col">{{jugador.nombre}}</div>
+        </div>
+        <div class="row">
+          <div class="col-33"><label>Altura:</label></div>
+          <div class="col">{{jugador.altura}}</div>
+        </div>
+        <div class="row">
+          <div class="col-33"><label>Fecha nac:</label></div>
+          <div class="col">{{parseDate(jugador.fecnac)}}</div>
+        </div>
+        <div class="row">
+          <div class="col-33"><label>Lugar nac:</label></div>
+          <div class="col">{{jugador.lugarnac}}</div>
+        </div>
+        <div class="row">
+          <div class="col-33"><label>Peso:</label></div>
+          <div class="col">{{jugador.peso}}</div>
+        </div>
+        <div class="row">
+          <div class="col-33"><label>Posicion:</label></div>
+          <div class="col">{{jugador.posicion}}</div>
+        </div>
+        <div class="row">
+          <div class="col-33"><label>Cl&uacute;b ant:</label></div>
+          <div class="col">{{jugador.procedencia}}</div>
+        </div>
+      </section>
+    </div>
+  </ion-content>
+</ion-view>

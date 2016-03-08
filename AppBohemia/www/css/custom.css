@@ -28,7 +28,7 @@ div.container {
 }
 
 #news.squad .news-nuevas p.title {
-  font-size:22px;
+  font-size: 22px;
   word-break: normal;
   white-space: normal;
 }
@@ -84,4 +84,22 @@ form.login p.error {
 
 .popup-alert .popup {
   background-color: white;
+}
+
+.jugador .seccion{
+  background-color: black;
+  color: white;
+}
+
+.jugador .seccion .titulo {
+
+}
+
+.jugador .seccion .dorsal {
+  text-align: center;
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+  font-size: 30px;
+  line-height: 32px;
 }

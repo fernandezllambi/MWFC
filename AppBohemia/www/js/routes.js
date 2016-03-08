@@ -43,12 +43,18 @@ angular.module('app.routes', [])
                 templateUrl: 'templates/squad.html',
                 controller: 'squadCtrl'
             })
+          .state('squadDetail', {
+                url: '/detail',
+                templateUrl: 'templates/squadDetail.html',
+                controller: 'squadDetailCtrl',
+                params: {jugador: null}
+            })
 
             .state('fixture', {
                 url: '/fixture',
                 templateUrl: 'templates/fixture.html',
                 controller: 'fixtureCtrl'
-            })
+            });
 
         $urlRouterProvider.otherwise('/home')
 
