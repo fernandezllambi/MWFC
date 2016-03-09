@@ -2,8 +2,6 @@
  * Created by Rod on 2/29/16.
  */
 services.factory('newsFactory', ['$http', '$q', 'constants', function ($http, $q, constants) {
-  var news = [];
-
   var getNews = function () {
     var newsUrl = constants.apiUrl + 'get_news/?totalnews=5&offset=0&key='+constants.key+'&val='+constants.val;
     var data = {
@@ -14,7 +12,14 @@ services.factory('newsFactory', ['$http', '$q', 'constants', function ($http, $q
     };
     var deferred = $q.defer();
     $http.get(newsUrl).then(function(e){
-      deferred.resolve(JSON.parse(e.data));
+      var x2js = new X2JS();
+      var news = JSON.parse(e.data).noticias.slice(1);
+
+      for(n in news){
+        news[n].img = x2js.xml_str2json(atob(news[n].img)).img._src;
+      }
+
+      deferred.resolve(news);
     }, function(){
       alert('error');
     });

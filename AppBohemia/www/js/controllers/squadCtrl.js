@@ -2,7 +2,7 @@
  * Created by Rod on 2/27/16.
  */
 controllers.controller('squadCtrl', function ($scope, $ionicLoading, squadFactory) {
-  $scope.squad = {};
+  $scope.jugadores = {};
 
   $scope.parseDate = function(str){
     return str.substring(6,8) + '-'+str.substring(4,6) + '-'+ str.substring(0,4);
@@ -13,7 +13,7 @@ controllers.controller('squadCtrl', function ($scope, $ionicLoading, squadFactor
   });
 
   squadFactory.getSquad().then(function(s){
-    $scope.squad = s;
+    $scope.jugadores = s;
     $ionicLoading.hide();
   });
 });

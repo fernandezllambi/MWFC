@@ -167,7 +167,10 @@ section .top {
 }
 
 .news-reel img {
-  width: 100%;
+  /*width: 100%;*/
+  width: auto;
+  max-width: none;
+  height: 292px;
 }
 
 .reel-items {

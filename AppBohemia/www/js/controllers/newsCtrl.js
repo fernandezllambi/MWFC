@@ -5,7 +5,8 @@ controllers.controller('newsCtrl', function ($scope, newsFactory) {
   $scope.news = {};
 
   newsFactory.getNews().then(function(e){
-    $scope.news = e.noticias.slice(1);
+    $scope.news = e;
+    debugger;
   });
 
   $scope.options = {

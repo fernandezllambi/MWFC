@@ -4,32 +4,14 @@
       <div class="container">
         <section id="news" class="area-news">
           <p class="tit-highlight">Noticias</p>
-          <!--<ul class="news-reel">-->
-            <!--<li>-->
-              <!--<img src="img/news/news1.jpg"/>-->
-
-              <!--<div class="resume">Boca le ganó a Montevideo Wanderers con un gol del debutante Osvaldo</div>-->
-            <!--</li>-->
-          <!--</ul>-->
           <ion-slides options="options" class="news-reel">
               <ion-slide-page ng-repeat="new in news" >
                 <div>
-                    <img src="img/news/news1.jpg"/>
-
+                  <div style="background:url({{new.img}}) no-repeat center center;height: 292px;background-size: auto 100%;"></div>
                     <div class="resume">{{new.titulo}}</div>
                 </div>
               </ion-slide-page>
           </ion-slides>
-          <!--<ul class="reel-items">-->
-            <!--<li class="current"><a href="#">-</a></li>-->
-            <!--<li><a href="#">-</a></li>-->
-            <!--<li><a href="#">-</a></li>-->
-            <!--<li><a href="#">-</a></li>-->
-            <!--<li><a href="#">-</a></li>-->
-            <!--<li><a href="#">-</a></li>-->
-            <!--<li><a href="#">-</a></li>-->
-            <!--<li><a href="#">-</a></li>-->
-          <!--</ul>-->
         </section>
         <section id="home-fixture">
           <ul class="date-reel">
