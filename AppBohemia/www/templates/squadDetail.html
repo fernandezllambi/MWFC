@@ -6,7 +6,8 @@
         <p class="tit-highlight"><i class="icon ion-chevron-left" ui-sref="squad"></i>&nbsp;&nbsp;{{jugador.nombre}}</p>
         <div class="row">
           <div class="col">
-            <img style="width: 100%" src="{{jugador.img}}" alt="image1"/>
+            <img style="width: 100%" src="{{jugador.img_ampliada}}" alt="image1" ng-if="jugador.img_ampliada"/>
+            <img style="width: 100%" src="{{jugador.img}}" alt="image1" ng-if="!jugador.img_ampliada"/>
           </div>
         </div>
         <div class="row seccion">

@@ -10,15 +10,18 @@ services.factory('squadFactory', ['$http', '$q', 'constants', function ($http, $
       var jugadores = JSON.parse(e.data).jugadores;
 
       for(i in jugadores.Arquero){
-        jugadores.Arquero[i].img = atob(jugadores.Arquero[i].img_ampliada);
+        jugadores.Arquero[i].img = atob(jugadores.Arquero[i].img);
+        jugadores.Arquero[i].img_ampliada = atob(jugadores.Arquero[i].img_ampliada);
       }
 
       for(i in jugadores.Defensa){
-        jugadores.Defensa[i].img = atob(jugadores.Defensa[i].img_ampliada);
+        jugadores.Defensa[i].img = atob(jugadores.Defensa[i].img);
+        jugadores.Defensa[i].img_ampliada = atob(jugadores.Defensa[i].img_ampliada);
       }
 
       for(i in jugadores.Delantero){
-        jugadores.Delantero[i].img = atob(jugadores.Delantero[i].img_ampliada);
+        jugadores.Delantero[i].img = atob(jugadores.Delantero[i].img);
+        jugadores.Delantero[i].img_ampliada = atob(jugadores.Delantero[i].img_ampliada);
       }
       deferred.resolve(jugadores);
 
