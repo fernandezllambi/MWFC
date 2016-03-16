@@ -45,8 +45,28 @@ div.container {
   border-bottom: 2px solid #9a999e;
 }
 
+.fecha.actual {
+  background-color: #f8d21e;
+}
+
+.fecha.actual p.titulo {
+  font-size: 17px;
+}
+
+.fecha.actual .detalle p {
+  font-size: 17px;
+}
+
+.fecha.proxima {
+  background-color: #e2e2e2;
+}
+
+.fecha.ultima {
+  background-color: #e2e2e2;
+}
+
 .fecha p.titulo {
-  font-size: 13px;
+  font-size: 15px;
   color: gray;
   text-align: center;
 }
