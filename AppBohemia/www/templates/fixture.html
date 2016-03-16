@@ -5,51 +5,19 @@
                 <div class="top"></div>
                 <p class="tit-highlight">Fixture</p>
                 <div class="inn">
-                    <div class="fecha">
+                    <div class="fecha" ng-repeat="fecha in fixture.fecha" ng-init="partido = getPartido(fecha.partido)" ng-class="fecha._estado == 'actual' ? 'actual' : (fecha._estado == 'ultima' ? 'ultima' : (fecha._estado == 'proxima' ? 'proxima' : ''))">
                         <div class="row">
-                            <div class="col-80 col-offset-10"><p class="titulo">5 sep. - Primera división de Uruguay</p></div>
+                            <div class="col-80 col-offset-10"><p class="titulo">{{parseDate(fecha._fecha)}} - {{fecha._nombre}}</p></div>
                         </div>
                         <div class="detalle">
-                            <div class="row">
-                                <div class="col-25"><p>Wanderers</p></div>
+                            <div class="row" >
+                                <div class="col-25"><p>{{partido.local.__text}}</p></div>
                                 <div class="col-50 score">
-                                    <img src="img/teams/wanderers.png">
-                                    5 - 1
-                                    <img src="img/teams/juventud.jpg">
+                                    <img src="img/teams/{{partido.local._img}}.png">
+                                    {{partido.goleslocal}} - {{partido.golesvisitante}}
+                                    <img src="img/teams/{{partido.visitante._img}}.png">
                                 </div>
-                                <div class="col-25"><p>Juventud</p></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fecha">
-                        <div class="row">
-                            <div class="col-50 col-offset-25"><p class="titulo">5 sep. - Primera división de Uruguay</p></div>
-                        </div>
-                        <div class="detalle">
-                            <div class="row">
-                                <div class="col-25"><p>Wanderers</p></div>
-                                <div class="col-50 score">
-                                    <img src="img/teams/wanderers.png">
-                                    5 - 1
-                                    <img src="img/teams/juventud.jpg">
-                                </div>
-                                <div class="col-25"><p>Juventud</p></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fecha">
-                        <div class="row">
-                            <div class="col-50 col-offset-25"><p class="titulo">5 sep. - Primera división de Uruguay</p></div>
-                        </div>
-                        <div class="detalle">
-                            <div class="row">
-                                <div class="col-25"><p>Wanderers</p></div>
-                                <div class="col-50 score">
-                                    <img src="img/teams/wanderers.png">
-                                    5 - 1
-                                    <img src="img/teams/juventud.jpg">
-                                </div>
-                                <div class="col-25"><p>Juventud</p></div>
+                                <div class="col-25"><p>{{partido.visitante.__text}}</p></div>
                             </div>
                         </div>
                     </div>

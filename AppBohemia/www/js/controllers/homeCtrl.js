@@ -1,11 +1,18 @@
 /**
  * Created by Rod on 2/27/16.
  */
-controllers.controller('homeCtrl', function ($scope, newsFactory) {
+controllers.controller('homeCtrl', function ($scope, $ionicLoading, newsFactory) {
   $scope.news = {};
+
+  $ionicLoading.show({
+    template: '<ion-spinner></ion-spinner>'
+  });
 
   newsFactory.getNews().then(function(e){
     $scope.news = e;
+    $ionicLoading.hide();
+  }, function(){
+    $ionicLoading.hide();
   });
 
   $scope.options = {
