@@ -74,7 +74,7 @@ angular.module('monospaced.qrcode', [])
                         modules = qr.getModuleCount();
                     },
                     setSize = function (value) {
-                        var relativeSize = element.parent()[0].offsetWidth * parseInt(value) / 100;
+                        var relativeSize = parseInt(value) <= 100 ? element.parent()[0].offsetWidth * parseInt(value) / 100 : parseInt(value);
                         size = relativeSize;
                         //size = parseInt(value, 10) || modules * 2;
                         tile = size / modules;

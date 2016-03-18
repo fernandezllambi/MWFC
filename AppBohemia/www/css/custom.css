@@ -123,3 +123,10 @@ form.login p.error {
   font-size: 30px;
   line-height: 32px;
 }
+
+.profile .item.item-input{
+  font-weight: bold;
+}
+.profile .item.item-input .input-label{
+  font-weight: normal;
+}

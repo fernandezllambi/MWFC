@@ -10,6 +10,11 @@ controllers.controller('loginCtrl', function ($scope, $state, loginFactory, $ion
   $scope.$on("$ionicView.beforeEnter", function (scopes, states) {
     var header = document.getElementsByTagName('header')[0];
     header.style.display = 'none';
+
+    var socio = loginFactory.get();
+    if(socio){
+      $state.go('profile', {socio:socio});
+    }
   });
 
   $scope.close = function () {
@@ -24,16 +29,17 @@ controllers.controller('loginCtrl', function ($scope, $state, loginFactory, $ion
     model.mail = login.mail.$modelValue;
     model.password = login.password.$modelValue;
     loginFactory.login(model).then(function(d){
-      if(d.error == 2){
-        var alertPopup = $ionicPopup.alert({
-          title: 'Atención',
-          cssClass: 'popup-alert',
-          template: d.msj,
-          okText: 'Aceptar', // String (default: 'OK'). The text of the OK button.
-          okType: 'button-dark'
-        });
-      }
+      $state.go('profile', {socio:d});
       $ionicLoading.hide();
+    }, function(e){
+      $ionicLoading.hide();
+      var alertPopup = $ionicPopup.alert({
+        title: 'Atención',
+        cssClass: 'popup-alert',
+        template: e,
+        okText: 'Aceptar', // String (default: 'OK'). The text of the OK button.
+        okType: 'button-dark'
+      });
     });
   }
 

@@ -1,0 +1,52 @@
+<ion-view title="Profile">
+  <ion-content overflow-scroll="true" padding="false">
+    <div class="container">
+      <section id="news" class="profile">
+        <div class="top"></div>
+        <p class="tit-highlight">{{socio.Nombre}}&nbsp;{{socio.Apellido}}</p>
+
+        <div class="inn">
+          <div class="row">
+            <div class="col-33">
+              <img src="{{socio.Foto}}" style="width: 100%">
+            </div>
+            <div class="col">
+              <div class="list">
+                <label class="item item-input">
+                  <span class="input-label">Nombres:</span>
+                  {{socio.Nombre}}&nbsp;{{socio.SegundoNombre}}
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Apellidos:</span>
+                  {{socio.Apellido}}&nbsp;{{socio.SegundoApellido}}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="list">
+                <label class="item item-input">
+                  <span class="input-label">Nro. Socio:</span>
+                  {{socio.NroSocio}}
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Email:</span>
+                  {{socio.Email}}
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">C.I.:</span>
+                  {{socio.Ci}}
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Fecha de nacimiento:</span>
+                  {{socio.FechaNacimiento}}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </ion-content>
+</ion-view>
