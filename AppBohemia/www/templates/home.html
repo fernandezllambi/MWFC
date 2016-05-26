@@ -16,19 +16,13 @@
         <section id="home-fixture">
           <ul class="date-reel">
             <li>
-              <div class="date">Fecha 15 - 05/12 Complejo Rentistas</div>
+              <div class="date">{{fecha.nombre}} - {{fecha.fecha}} <br/>{{fecha.nombreEstadio}}</div>
               <div class="teams clearfix">
-                <div class="team"><img src="img/teams/rentistas.png"/></div>
-                <div class="numbers">1:2</div>
-                <div class="team"><img src="img/teams/wanderers.png"/></div>
+                <div class="team"><img src="img/teams/{{fecha.local._img}}.png"/></div>
+                <div class="numbers">{{fecha.goleslocal}}:{{fecha.golesvisitante}}</div>
+                <div class="team"><img src="img/teams/{{fecha.visitante._img}}.png"/></div>
               </div>
             </li>
-          </ul>
-          <ul class="reel-items">
-            <li class="current"><a href="#">-</a></li>
-            <li><a href="#">-</a></li>
-            <li><a href="#">-</a></li>
-            <li><a href="#">-</a></li>
           </ul>
         </section>
       </div>

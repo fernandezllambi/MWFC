@@ -11,7 +11,7 @@ services.factory('loginFactory', ['$http', '$q', 'constants', function ($http, $
           deferred.resolve(d.data);
           socio = d.data;
         });
-      }else{
+      } else {
         deferred.reject('Usuario y/o contraseña inválida');
       }
 
@@ -22,13 +22,18 @@ services.factory('loginFactory', ['$http', '$q', 'constants', function ($http, $
     return deferred.promise;
   };
 
-  var get = function(){
+  var get = function () {
     return socio;
+  };
+
+  var logout = function () {
+    socio = undefined;
   };
 
   return {
     login: login,
-    get: get
+    get: get,
+    logout: logout
   };
 
 }]);
