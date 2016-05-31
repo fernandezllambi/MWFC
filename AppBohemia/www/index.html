@@ -16,10 +16,12 @@
   <!-- Crypto js -->
   <script src="js/crypto/core.js"></script>
   <script src="js/crypto/md5.js"></script>
+  <script src="js/crypto/sha.js"></script>
   <script src="lib/x2json/x2json.js"></script>
 
   <!-- ionic/angularjs js -->
   <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/angular-resource/angular-resource.min.js"></script>
 
   <!-- cordova script (this will be a 404 during development) -->
   <script src="lib/ngCordova/dist/ng-cordova.js"></script>
@@ -52,10 +54,13 @@
   <script src="js/controllers/tablesCtrl.js"></script>
   <script src="js/controllers/tabsCtrl.js"></script>
   <script src="js/controllers/profileCtrl.js"></script>
+  <script src="js/controllers/twitterCtrl.js"></script>
 
 
   <script src="lib/angular-qrcode/angular-qrcode.js"></script>
   <script src="lib/qrcode-generator/js/qrcode.js"></script>
+  <script src="lib/ng-cordova-oauth/dist/ng-cordova-oauth.min.js"></script>
+  <script src="lib/ng-twitter-api/dist/ng-twitter-api.min.js"></script>
 
 
 </head>
@@ -93,7 +98,7 @@
           <div class="col"><a href="#/squad" id="tab-plantel" title="plantel"><span></span>Plantel</a></div>
           <div class="col"><a href="#/license" id="tab-fotos" title="fotos"><span></span>Carné</a></div>
           <div class="col"><a href="#/fixture" id="tab-fixture" title="fixture"><span></span>Fixture</a></div>
-          <div class="col"></div>
+          <div class="col"><a href="#/twitter" id="tab-social" title="social"><span></span>Social</a></div>
           <div class="col"></div>
         </div>
       </div>

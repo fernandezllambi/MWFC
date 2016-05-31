@@ -1,4 +1,4 @@
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'app.constants', 'monospaced.qrcode'])
+angular.module('app', ['ionic', 'ngCordovaOauth', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'app.constants', 'monospaced.qrcode', 'ngResource', 'ngTwitter'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

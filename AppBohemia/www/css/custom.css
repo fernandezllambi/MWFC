@@ -106,7 +106,7 @@ form.login p.error {
   background-color: white;
 }
 
-.jugador .seccion{
+.jugador .seccion {
   background-color: black;
   color: white;
 }
@@ -124,9 +124,21 @@ form.login p.error {
   line-height: 32px;
 }
 
-.profile .item.item-input{
+.profile .item.item-input {
   font-weight: bold;
 }
-.profile .item.item-input .input-label{
+
+.profile .item.item-input .input-label {
   font-weight: normal;
+}
+
+button.facebook {
+  background-color: #3b5998!important;
+}
+button.twitter {
+  background-color: #1dcaff!important;
+}
+button.facebook._disabled, button.twitter._disabled
+{
+  opacity: .4;
 }

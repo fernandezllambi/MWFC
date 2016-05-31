@@ -61,6 +61,12 @@ angular.module('app.routes', [])
         url: '/fixture',
         templateUrl: 'templates/fixture.html',
         controller: 'fixtureCtrl'
+      })
+
+      .state('twitter', {
+        url: '/twitter',
+        templateUrl: 'templates/twitter.html',
+        controller: 'twitterCtrl'
       });
 
     $urlRouterProvider.otherwise('/home')
