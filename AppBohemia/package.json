@@ -21,14 +21,10 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard",
-    {
-      "locator": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git",
-      "id": "cordova-plugin-inappbrowser"
-    }
+    "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
-    "android",
-    "ios"
+    "ios",
+    "android"
   ]
 }

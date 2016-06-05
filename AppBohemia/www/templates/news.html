@@ -6,7 +6,7 @@
         <p class="tit-highlight">Noticias</p>
         <div class="inn">
           <div class="news-nuevas">
-            <article class="clearfix" ng-repeat="new in news">
+            <article class="clearfix" ng-repeat="new in news" ng-click="open(new)">
               <div class="news-picture">
                 <img src="{{new.img}}" alt="image1"/>
               </div>

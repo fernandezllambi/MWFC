@@ -1,7 +1,7 @@
 /**
  * Created by Rod on 2/27/16.
  */
-controllers.controller('newsCtrl', function ($scope, $ionicLoading, newsFactory) {
+controllers.controller('newsCtrl', function ($scope, $ionicLoading, newsFactory, $cordovaInAppBrowser) {
   $scope.news = {};
 
   $ionicLoading.show({
@@ -35,5 +35,9 @@ controllers.controller('newsCtrl', function ($scope, $ionicLoading, newsFactory)
     }
 
     return str;
-  }
+  };
+
+  $scope.open = function(news){
+    $cordovaInAppBrowser.open(news.link, '_system');
+  };
 });

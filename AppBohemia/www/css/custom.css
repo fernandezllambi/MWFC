@@ -46,7 +46,8 @@ div.container {
 }
 
 .fecha.actual {
-  background-color: #f8d21e;
+  background-color: #000000;
+  color: white;
 }
 
 .fecha.actual p.titulo {
@@ -141,4 +142,20 @@ button.twitter {
 button.facebook._disabled, button.twitter._disabled
 {
   opacity: .4;
+}
+
+#licence{
+  background-image: url('../img/licenceBackground.png');
+  background-size: cover;
+  background-position-x: -460px;
+}
+
+#licence-box .row .col{
+  background-color: white;
+  margin: 3px 0px;
+}
+
+#licence canvas.qrcode{
+  padding: 15px;
+  background-color: white;
 }

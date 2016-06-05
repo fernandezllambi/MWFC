@@ -1,9 +1,31 @@
 <ion-view title="Tables">
-  <ion-content overflow-scroll="true" padding="false">
+  <ion-content overflow-scroll="true" padding="false" id="licence">
     <div class="container">
       <div class="row">
         <div class="col-80 col-offset-10">
-          <qrcode data="{{socio.NroSocio}}" size="100"></qrcode>
+          <img src="../img/logoTopBig.png" style="max-width: 100%"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="licence-box">
+          <div class="row">
+            <div class="col">{{socio.Nombre}}</div>
+          </div>
+          <div class="row">
+            <div class="col">{{socio.Apellido}}</div>
+          </div>
+          <div class="row">
+            <div class="col">{{socio.Ci}}</div>
+          </div>
+          <div class="row">
+            <div class="col">{{socio.NroSocio}}</div>
+          </div>
+        </div>
+        <div class="col"><img src="{{socio.Foto}}" style="width: 139px;margin-top: 7px;"/></div>
+      </div>
+      <div class="row">
+        <div class="col-60 col-offset-20">
+          <qrcode data="{{socio.NroSocio}}" size="100" padding="10"></qrcode>
         </div>
       </div>
     </div>

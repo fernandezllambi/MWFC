@@ -63,10 +63,10 @@ angular.module('app.routes', [])
         controller: 'fixtureCtrl'
       })
 
-      .state('twitter', {
-        url: '/twitter',
-        templateUrl: 'templates/twitter.html',
-        controller: 'twitterCtrl'
+      .state('social', {
+        url: '/social',
+        templateUrl: 'templates/social.html',
+        controller: 'socialCtrl'
       });
 
     $urlRouterProvider.otherwise('/home')

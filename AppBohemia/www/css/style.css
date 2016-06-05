@@ -829,4 +829,12 @@ button {
   background-position: -65px -550px;
 }
 
+#tab-bar a#tab-social span {
+  background-position: 0 -723px;
+}
+
+#tab-bar a#tab-social:hover span, #tab-bar a#tab-social.current span {
+  background-position: -65px -723px;
+}
+
 /*# sourceMappingURL=style.css.map */
