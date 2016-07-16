@@ -9,7 +9,6 @@ controllers.controller('licenseCtrl', function ($scope, $state, loginFactory) {
       $state.go('login');
     }else{
       var lenght = socio.Ci.length;
-      debugger;
       socio.Ci = socio.Ci.substr(0,lenght-1) + "-" + socio.Ci[lenght-1];
       $scope.socio = socio;
     }

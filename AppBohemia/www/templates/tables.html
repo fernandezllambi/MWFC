@@ -6,10 +6,12 @@
         <p class="tit-highlight">Posiciones</p>
         <!-- tabs -->
         <ul class="_tabs clearfix">
-          <li><a title="anual">{{table.posiciones.campeonatoNombreAlternativo.__text}}</a></li>
+          <li><a ng-click="setTab(0)" title="anual" ng-class="tabs[0] ? 'current' : ''">Anual</a></li>
+          <li><a ng-click="setTab(1)" title="clausura" ng-class="tabs[1] ? 'current' : ''">{{tables.current.name}}</a></li>
+          <li><a ng-click="setTab(2)" title="apertura" ng-class="tabs[2] ? 'current' : ''">{{tables.previous != null? tables.previous.name : 'Descenso'}}</a></li>
         </ul>
         <div class="inn">
-          <div class="table tabla show">
+          <div class="table tabla show" ng-if="!decline">
             <div class="hr">
               <ul>
                 <li class="posicion"> #</li>
@@ -36,6 +38,26 @@
                 <li>{{equipo.golesfavor}}</li>
                 <li>{{equipo.golescontra}}</li>
                 <li>{{equipo.puntos}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="table tabla show" ng-if="decline">
+            <div class="hr">
+              <ul>
+                <li class="posicion"> #</li>
+                <li class="escudo"></li>
+                <li class="equipo"> Equipo</li>
+                <li>PJ</li>
+                <li>PTS</li>
+              </ul>
+            </div>
+            <div class="td">
+              <ul id="{{declineTeam._key}}" ng-repeat="declineTeam in table.posiciones.equipo" ng-class="{'golden' : declineTeam._key == 'wanderers'}">
+                <li class="posicion">{{$index+1}}.</li>
+                <li class="escudo"><img src="img/teams/{{declineTeam._key}}.png"></li>
+                <li class="equipo">{{declineTeam.nombre}}</li>
+                <li>{{declineTeam.jugadosdescenso}}</li>
+                <li>{{declineTeam.puntosdescenso}}</li>
               </ul>
             </div>
           </div>

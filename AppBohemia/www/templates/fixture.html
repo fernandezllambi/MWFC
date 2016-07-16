@@ -6,10 +6,10 @@
                 <p class="tit-highlight">Fixture</p>
                 <div class="inn">
                     <div class="fecha" ng-repeat="fecha in fixture.fecha" ng-init="partido = getPartido(fecha.partido)" ng-class="fecha._estado == 'actual' ? 'actual' : (fecha._estado == 'ultima' ? 'ultima' : (fecha._estado == 'proxima' ? 'proxima' : ''))">
-                        <div class="row">
+                        <div class="row" ng-if="partido != null">
                             <div class="col-80 col-offset-10"><p class="titulo">{{parseDate(fecha._fecha)}} - {{fecha._nombre}}</p></div>
                         </div>
-                        <div class="detalle">
+                        <div class="detalle" ng-if="partido != null">
                             <div class="row" >
                                 <div class="col-25"><p>{{partido.local.__text}}</p></div>
                                 <div class="col-50 score">

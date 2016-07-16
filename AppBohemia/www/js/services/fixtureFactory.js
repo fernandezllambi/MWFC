@@ -4,11 +4,11 @@
 services.factory('fixtureFactory', ['$http', '$q', function ($http, $q) {
   var getFixture = function () {
     var fixtureUrl = 'http://mwfc.com.uy/data/xml/es/uruguay/deportes.futbol.uruguay.fixture.xml';
-    var newsUrl = 'http://mwfc.com.uy/data/xml/es/uruguay/deportes.futbol.uruguay.posiciones.xml';
+    var posiciones = 'http://mwfc.com.uy/data/xml/es/uruguay/deportes.futbol.uruguay.posiciones.xml';
 
     var deferred = $q.defer();
 
-    $q.all([$http.get(fixtureUrl), $http.get(newsUrl)]).then(function(results){
+    $q.all([$http.get(fixtureUrl), $http.get(posiciones)]).then(function(results){
       var x2js = new X2JS();
 
       var fixture = x2js.xml_str2json(results[0].data).fixture;
@@ -16,10 +16,16 @@ services.factory('fixtureFactory', ['$http', '$q', function ($http, $q) {
 
       for(f in fixture.fecha){
         var fecha = fixture.fecha[f];
-        for(p in fecha.partido){
-          var partido = fecha.partido[p];
-          partido.local._img = getImage(partido.local, posiciones.equipo);
-          partido.visitante._img = getImage(partido.visitante, posiciones.equipo);
+        //SI hay más de una fecha
+        if(fecha.partido.length !== undefined){
+          for(p in fecha.partido){
+            var partido = fecha.partido[p];
+            partido.local._img = getImage(partido.local, posiciones.equipo);
+            partido.visitante._img = getImage(partido.visitante, posiciones.equipo);
+          }
+        }else{
+          fecha.partido.local._img = getImage(fecha.partido.local, posiciones.equipo);
+          fecha.partido.visitante._img = getImage(fecha.partido.visitante, posiciones.equipo);
         }
       }
 

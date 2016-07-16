@@ -17,6 +17,18 @@ controllers.controller('homeCtrl', function ($scope, $ionicLoading, $q, newsFact
     for (f in $scope.fechas) {
       var fecha = $scope.fechas[f];
       if (fecha._estado == 'actual') {
+        if (fecha.partido.length === undefined) {
+          $scope.fecha = {
+            nombre: fecha._nombre,
+            local: fecha.partido.local,
+            visitante: fecha.partido.visitante,
+            goleslocal: fecha.partido.goleslocal,
+            golesvisitante: fecha.partido.golesvisitante,
+            nombreEstadio: fecha.partido._nombreEstadio,
+            fecha:parseDate(fecha._fecha)
+          };
+          break;
+        }
         for (p in fecha.partido) {
           var partido = fecha.partido[p];
           if (partido.local._id == "200" || partido.visitante._id == "200") {

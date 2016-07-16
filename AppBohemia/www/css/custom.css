@@ -159,3 +159,8 @@ button.facebook._disabled, button.twitter._disabled
   padding: 15px;
   background-color: white;
 }
+
+qrcode{
+  left: -15px;
+  position: relative;
+}
