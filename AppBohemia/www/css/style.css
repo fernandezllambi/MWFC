@@ -701,7 +701,7 @@ button {
   font-family: "helveticalight", Helvetica, sans-serif;
   font-size: 17px;
   position: fixed;
-  bottom: -120px;
+  bottom: -70px;
   z-index: 3;
   width: 100%;
 }

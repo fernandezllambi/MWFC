@@ -7,8 +7,6 @@ angular.module('app.routes', [])
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
     $stateProvider
-
-
       .state('home', {
         url: '/home',
         templateUrl: 'templates/home.html',
@@ -69,7 +67,7 @@ angular.module('app.routes', [])
         controller: 'socialCtrl'
       });
 
-    $urlRouterProvider.otherwise('/home')
+    $urlRouterProvider.otherwise('home')
 
 
   });

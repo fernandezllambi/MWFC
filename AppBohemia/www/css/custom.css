@@ -92,7 +92,7 @@ div.container {
   height: 373px;
 }
 
-form.login input[type='text'], form.login input[type='password'] {
+form.login input[type='text'], form.login input[type='password'], form.login input[type='email'] {
   border: 1px solid lightgray;
   height: 55px;
   font-size: 24px;
@@ -163,4 +163,8 @@ button.facebook._disabled, button.twitter._disabled
 qrcode{
   left: -15px;
   position: relative;
+}
+
+#tab-bar img{
+  width: 100%;
 }
