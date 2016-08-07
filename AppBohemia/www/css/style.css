@@ -296,7 +296,7 @@ section .top {
 }
 
 .table .td ul.golden {
-  background-color: #f8d21e;
+  background: linear-gradient(to right, rgba(255,0,0,0), #abedff);
 }
 
 .table .td ul li {

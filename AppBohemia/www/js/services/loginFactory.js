@@ -6,7 +6,7 @@ services.factory('loginFactory', ['$http', '$q', 'constants', function ($http, $
     $http.get(loginUrl).then(function (e) {
       var respuesta = JSON.parse(e.data);
       if (respuesta.error == 0) {
-        var userDataUrl = 'http://api.mwfc.com.uy.69-16-238-101.plesk.servidorwindows4.com/api/socio?id=' + model.mail;
+        var userDataUrl = 'http://api.mwfc.com.uy/api/socio?ci=' + respuesta.cedula;
         $http.get(userDataUrl).then(function (d) {
           deferred.resolve(d.data);
           socio = d.data;
