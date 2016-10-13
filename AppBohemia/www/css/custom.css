@@ -10,18 +10,9 @@ div.container {
   font-size: 1em;
 }
 
-#news.squad {
-
-}
-
 #news.squad .inn {
   padding-top: 20px;
 }
-
-/*#news.squad article {*/
-/*padding-left: 20px;*/
-/*padding-right: 20px;*/
-/*}*/
 
 #news.squad .news-content {
   padding: 0;
@@ -112,10 +103,6 @@ form.login p.error {
   color: white;
 }
 
-.jugador .seccion .titulo {
-
-}
-
 .jugador .seccion .dorsal {
   text-align: center;
   background-color: white;
@@ -167,4 +154,36 @@ qrcode{
 
 #tab-bar img{
   width: 100%;
+}
+
+.history{
+    font-size: initial;
+    color: #666666;
+}
+
+.history p {
+  text-align: center;
+  color: black;
+}
+
+.text-align-rigt{
+  text-align: right
+}
+
+.bar.bar-positive {
+    border-color: #000;
+    background-color: #000;
+    background-image: linear-gradient(0deg, #000, #000 50%, transparent 50%);
+    color: #fff;
+}
+
+#rewards .fecha .detalle .score img {
+  width: 35px;
+}
+
+input.result {
+  border-bottom: 1px solid gray;
+  text-align: center;
+  font-size: 60px;
+  height: 85px;
 }

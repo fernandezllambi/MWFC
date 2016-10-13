@@ -1,0 +1,59 @@
+<ion-view title="Rewards" cache-view="false">
+  <ion-content overflow-scroll="true" padding="false">
+    <div class="container">
+      <section id="positions">
+        <div class="top"></div>
+        <p class="tit-highlight">Premios</p>
+        <div class="inn">
+          <div ng-if="socio == undefined">
+            <h1>Hacete socio e inicia sesi&oacute;n, y comenz&aacute; a jugar para obtener puntos y canjearlos por premios</h1>
+            <button class="btn" ui-sref="login">Iniciar sesi&oacute;n</button>
+          </div>
+          <div ng-if="socio != undefined && date" id="rewards">
+            <div class="card">
+              <div class="item item-text-wrap">
+                <div class="fecha">
+                  <div class="detalle" ng-if="date != null">
+                    <div class="row">
+                      <div class="col-25">
+                        <p>{{date.local.__text}}</p>
+                      </div>
+                      <div class="col-50 score">
+                        <img src="img/teams/{{date.local._img}}.png"> - <img src="img/teams/{{date.visitante._img}}.png">
+                      </div>
+                      <div class="col-25">
+                        <p>{{date.visitante.__text}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn" ng-click="play()">Jugar</button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="row">
+                <div class="col"> Puntos acumulados:</div>
+                <div class="col-33 text-align-rigt">{{rewards.TotalPremios}}</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="history">
+                <p>Historial de puntos</p>
+                <div class="row">
+                  <div class="col"></div>
+                  <div class="col-10">Pts</div>
+                </div>
+                <div class="row" ng-repeat="reward in rewards.Premios">
+                  <div class="col">{{reward.Descripcion}}</div>
+                  <div class="col-10">{{reward.Valor}}</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </section>
+    </div>
+  </ion-content>
+</ion-view>

@@ -54,18 +54,21 @@ angular.module('app.routes', [])
         controller: 'squadDetailCtrl',
         params: {jugador: null}
       })
-
       .state('fixture', {
         url: '/fixture',
         templateUrl: 'templates/fixture.html',
         controller: 'fixtureCtrl'
       })
-
       .state('social', {
         url: '/social',
         templateUrl: 'templates/social.html',
         controller: 'socialCtrl'
-      });
+      })
+      .state('rewards', {
+        url: '/rewards',
+        templateUrl: 'templates/rewards.html',
+        controller: 'rewardsCtrl'
+      });;
 
     $urlRouterProvider.otherwise('home')
 

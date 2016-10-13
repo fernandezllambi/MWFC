@@ -16,7 +16,11 @@ services.factory('newsFactory', ['$http', '$q', 'constants', function ($http, $q
       var news = JSON.parse(e.data).noticias.slice(1);
 
       for(n in news){
-        news[n].img = x2js.xml_str2json(atob(news[n].img)).img._src;
+        if(atob(news[n].img)){
+          news[n].img = x2js.xml_str2json(atob(news[n].img)).img._src;
+        }else{
+          news[n].img = "img/top-menu-brand.png";
+        }        
       }
 
       deferred.resolve(news);

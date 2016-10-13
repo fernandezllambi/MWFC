@@ -62,7 +62,9 @@ controllers.controller('tabsCtrl', function ($scope, $rootScope, $state) {
         else if (state.name == "profile") {
             $scope.tab = 4;
         }
-
+        else if (state.name == "rewards") {
+            $scope.tab = 9;
+        }
 
 
     };

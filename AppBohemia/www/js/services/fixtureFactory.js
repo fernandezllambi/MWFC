@@ -44,8 +44,38 @@ services.factory('fixtureFactory', ['$http', '$q', function ($http, $q) {
     }
   }
 
+  function getCurrentNext(){
+    var deferred = $q.defer();
+
+    getFixture().then(function(data){
+      for(var f in data.fecha){
+        if(data.fecha[f]._estado == 'proxima' ){
+          //Si hay una sola fecha Ej. final de campeonato
+          if (data.fecha[f].partido.length === undefined) {
+              if (data.fecha[f].partido.local._id == "200" || data.fecha[f].partido.visitante._id == "200") {
+                  deferred.resolve(data.fecha[f].partido);
+              }else{
+                  return null;
+              }
+          } else {
+              for (p in data.fecha[f].partido) {
+                  var partido = data.fecha[f].partido[p];
+                  if (partido.local._id == "200" || partido.visitante._id == "200") {
+                      deferred.resolve(partido);
+                  }
+              }
+          }
+          
+        }
+      }
+    });
+
+    return deferred.promise;
+  }
+
   return {
-    getFixture: getFixture
+    getFixture: getFixture,
+    getCurrentNext : getCurrentNext
   };
 
 }]);

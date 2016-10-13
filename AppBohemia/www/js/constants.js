@@ -5,5 +5,6 @@ angular.module('app.constants', [])
   .constant("constants", {
     key : CryptoJS.MD5("mwfc_53r1al_53rvICE_app#"+"wanderers").toString(),
     val : "wanderers",
-    apiUrl : 'http://mwfc.com.uy/api/'
+    apiUrl : 'http://mwfc.com.uy/api/',
+    sociosApiUrl : 'http://api.mwfc.com.uy/api/'
   });

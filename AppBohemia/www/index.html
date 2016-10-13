@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -42,7 +43,7 @@
     <script src="js/services/loginFactory.js"></script>
     <script src="js/services/squadFactory.js"></script>
     <script src="js/services/fixtureFactory.js"></script>
-
+    <script src="js/services/rewardsFactory.js"></script>
     <!-- Controllers js -->
     <script src="js/controllers/fixtureCtrl.js"></script>
     <script src="js/controllers/homeCtrl.js"></script>
@@ -55,7 +56,7 @@
     <script src="js/controllers/tabsCtrl.js"></script>
     <script src="js/controllers/profileCtrl.js"></script>
     <script src="js/controllers/socialCtrl.js"></script>
-
+    <script src="js/controllers/rewardsCtrl.js"></script>
 
     <script src="lib/angular-qrcode/angular-qrcode.js"></script>
     <script src="lib/qrcode-generator/js/qrcode.js"></script>
@@ -65,85 +66,95 @@
 
 
 </head>
+
 <body ng-app="app">
-<div class="wrapper">
-    <div class="container">
-        <header>
-            <div class="top-menu">
-                <a class="top-menu-btn" href="#/login"><img src="img/top-menu-icon.png"/></a>
-                <ul>
-                    <li>item 1</li>
-                    <li>item 2</li>
-                </ul>
-            </div>
-            <h1>Wanderers<span>App Oficial</span></h1>
-
-            <div class="brand"><img src="img/top-menu-brand.png"/></div>
-        </header>
-        <!--<ion-nav-bar class="bar-positive">-->
-        <!--</ion-nav-bar>-->
-
-
-        <ion-nav-view></ion-nav-view>
-        <section id="tab-bar" class="clearfix" ng-controller="tabsCtrl">
-            <div>
-                <div class="row">
-                    <div class="col">
-                        <a href="#/home">
-                            <img src="img/menu/home.png" ng-if="tab != 1"/>
-                            <img src="img/menu/home_a.png" ng-if="tab == 1"/>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#/news">
-                            <img src="img/menu/news.png" ng-if="tab != 2"/>
-                            <img src="img/menu/news_a.png" ng-if="tab == 2"/>
-                        </a>
-                    </div>
-                    <div class="col"><a href="#/tables">
-                        <img src="img/menu/ball.png" ng-if="tab != 3"/>
-                        <img src="img/menu/ball_a.png" ng-if="tab == 3"/>
-                    </a>
-                    </div>
-                    <div class="col">
-                        <a href="#/login">
-                            <img src="img/menu/user.png" ng-if="tab != 4"/>
-                            <img src="img/menu/user_a.png" ng-if="tab == 4"/>
-                        </a>
-                    </div>
-                    <div class="col"><a href="#" ng-click="toogle();$event.stopPropagation();">
-                        <img id="more" src="img/menu/more.png"/></a></div>
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <div class="top-menu">
+                    <a class="top-menu-btn" href="#/login"><img src="img/top-menu-icon.png" /></a>
+                    <ul>
+                        <li>item 1</li>
+                        <li>item 2</li>
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <a href="#/squad">
-                            <img src="img/menu/team.png" ng-if="tab != 5"/>
-                            <img src="img/menu/team_a.png" ng-if="tab == 5"/>
-                        </a>
+                <h1>Wanderers<span>App Oficial</span></h1>
+
+                <div class="brand"><img src="img/top-menu-brand.png" /></div>
+            </header>
+            <!--<ion-nav-bar class="bar-positive">-->
+            <!--</ion-nav-bar>-->
+
+
+            <ion-nav-view></ion-nav-view>
+            <section id="tab-bar" class="clearfix" ng-controller="tabsCtrl">
+                <div>
+                    <div class="row">
+                        <div class="col">
+                            <a href="#/home">
+                                <img src="img/menu/home.png" ng-if="tab != 1" />
+                                <img src="img/menu/home_a.png" ng-if="tab == 1" />
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#/news">
+                                <img src="img/menu/news.png" ng-if="tab != 2" />
+                                <img src="img/menu/news_a.png" ng-if="tab == 2" />
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#/tables">
+                                <img src="img/menu/ball.png" ng-if="tab != 3" />
+                                <img src="img/menu/ball_a.png" ng-if="tab == 3" />
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#/login">
+                                <img src="img/menu/user.png" ng-if="tab != 4" />
+                                <img src="img/menu/user_a.png" ng-if="tab == 4" />
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" ng-click="toogle();$event.stopPropagation();">
+                                <img id="more" src="img/menu/more.png" /></a>
+                        </div>
                     </div>
-                    <div class="col">
-                        <a href="#/license">
-                            <img src="img/menu/qr.png" ng-if="tab != 6"/>
-                            <img src="img/menu/qr_a.png" ng-if="tab == 6"/>
-                        </a>
+                    <div class="row">
+                        <div class="col">
+                            <a href="#/squad">
+                                <img src="img/menu/team.png" ng-if="tab != 5" />
+                                <img src="img/menu/team_a.png" ng-if="tab == 5" />
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#/license">
+                                <img src="img/menu/qr.png" ng-if="tab != 6" />
+                                <img src="img/menu/qr_a.png" ng-if="tab == 6" />
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#/fixture">
+                                <img src="img/menu/callendar.png" ng-if="tab != 7" />
+                                <img src="img/menu/callendar_a.png" ng-if="tab == 7" />
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#/social">
+                                <img src="img/menu/social.png" ng-if="tab != 8" />
+                                <img src="img/menu/social_a.png" ng-if="tab == 8" />
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#/rewards">
+                                <img src="img/menu/rewards.png" ng-if="tab != 9" />
+                                <img src="img/menu/rewards_a.png" ng-if="tab == 9" />
+                            </a>
+                        </div>
                     </div>
-                    <div class="col">
-                        <a href="#/fixture">
-                            <img src="img/menu/callendar.png" ng-if="tab != 7"/>
-                            <img src="img/menu/callendar_a.png" ng-if="tab == 7"/>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#/social">
-                            <img src="img/menu/social.png" ng-if="tab != 8"/>
-                            <img src="img/menu/social_a.png" ng-if="tab == 8"/>
-                        </a>
-                    </div>
-                    <div class="col"></div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
-</div>
 </body>
+
 </html>

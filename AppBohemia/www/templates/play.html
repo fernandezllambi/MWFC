@@ -1,0 +1,42 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <div class="row">
+      <div class="col">
+        {{date.local.__text}} vs {{date.visitante.__text}}
+      </div>
+      <div class="col-10"><button class="button button-clear button-primary" ng-click="modal.hide()">X</button></div>
+    </div>
+
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="card" id="rewards">
+      <div class="item item-text-wrap">
+        <div class="fecha">
+          <div class="detalle" ng-if="date != null">
+            <div class="row">
+              <div class="col-25">
+                <p>{{date.local.__text}}</p>
+                <input class="result" type="number" min="0" max="20" maxlength="2"/>
+              </div>
+              <div class="col-50 score">
+                <img src="img/teams/{{date.local._img}}.png"> - <img src="img/teams/{{date.visitante._img}}.png">
+              </div>
+              <div class="col-25">
+                <p>{{date.visitante.__text}}</p>
+                <input class="result" type="number" min="0" max="20" maxlength="2"/>
+              </div>
+            </div>
+          </div>
+          <button class="btn" ng-click="bet()">Jugar</button>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, te postea interesset vituperatoribus usu. Est ea nobis dolorem similique, dicam pericula quaerendum te pri. Quo ei ignota nostrum periculis, ex cum facilis honestatis efficiantur. Ei nostrud definitionem sea.
+
+Vide philosophia reprehendunt ut ius, ad usu cibo dicat. No nec alia offendit honestatis, gubergren assentior est cu. Nonumes persequeris cu vim. Ius ne dicit ancillae.
+
+His accumsan comprehensam ea, habeo inimicus quo at. Eu duo esse numquam voluptua, sale audire an quo. Eu vim case atqui indoctum, ut prima choro hendrerit mea. Ea sit sale intellegat. Quo errem solet sadipscing eu.
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>
