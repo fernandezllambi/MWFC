@@ -1,4 +1,4 @@
-controllers.controller('rewardsCtrl', function ($scope, $state, fixtureFactory, loginFactory, rewardsFactory, $ionicModal) {
+controllers.controller('rewardsCtrl', function ($scope, $state, fixtureFactory, loginFactory, rewardsFactory, $ionicModal, betFactory, $cordovaDialogs) {
   $scope.$on("$ionicView.beforeEnter", function (scopes, states) {
     var socio = loginFactory.get();
 
@@ -29,7 +29,23 @@ controllers.controller('rewardsCtrl', function ($scope, $state, fixtureFactory, 
     $scope.modal.hide();
   };
 
-  $scope.bet = function() {
-    $scope.modal.hide();
+  $scope.bet = function(bet) {
+    betFactory.bet({
+      local : bet.local.$modelValue,
+      visitante : bet.visitante.$modelValue,
+    }).then(function(){
+      $cordovaDialogs.alert('Mucha suerte!', 'Confirmación', 'Ok')
+      .then(function() {
+        // callback success
+        $scope.modal.hide();
+      });
+      
+    }, function(data){
+      $cordovaDialogs.alert(data, 'Error', 'Ok')
+      .then(function() {
+        // callback success
+        $scope.modal.hide();
+      });
+    });    
   };
 });

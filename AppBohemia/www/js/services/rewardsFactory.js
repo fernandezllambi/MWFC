@@ -19,23 +19,10 @@ services.factory('rewardsFactory', ['$http', '$q', 'constants', 'loginFactory', 
 
     return deferred.promise;
   };
-
-  var bet = function(bet){
-    var deferred = $q.defer();
-    var bet = {};
-    $http.post(constants.sociosApiUrl + 'bet', bet).then(function(data){
-      //var 
-    });
-
-    deferred.resolve(data);
-
-    return deferred.promise;
-  };
-
+  
 
   return {
-    getUserRewards: getUserRewards,
-    bet: bet
+    getUserRewards: getUserRewards
   };
 
 }]);
