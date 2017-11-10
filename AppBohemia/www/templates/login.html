@@ -1,4 +1,4 @@
-<ion-view title="Login">
+<ion-view title="Login" cache-view="false">
   <ion-content overflow-scroll="true" padding="false">
     <section id="login">
       <div class="_popup">
@@ -9,19 +9,19 @@
           <form class="login" name="loginForm" novalidate>
             <div class="form-group">
               <label for="mail">Correo electr&oacute;nico:</label>
-              <input type="email" id="mail" name="mail" ng-model="mail" type="text" required="true" ng-minlength="5"/>
+              <input type="email" id="mail" name="mail" ng-model="mail" type="text" required="true" ng-minlength="5" />
               <p class="error" ng-show="loginForm.mail.$invalid && !loginForm.mail.$pristine">el correo electr&oacute;nico es requerido</p>
             </div>
             <div class="form-group">
               <label for="password">Contrase&ntilde;a:</label>
-              <input id="password" name="password" ng-model="password" type="password" ng-required="true"/>
+              <input id="password" name="password" ng-model="password" type="password" ng-required="true" />
               <p class="error" ng-show="loginForm.password.$invalid && !loginForm.password.$pristine">la contrase&ntilde;a es requerida</p>
             </div>
             <button class="btn" ng-disabled="loginForm.$invalid" ng-click="submit(loginForm)">Entrar</button>
           </form>
           <div class="form-questions">
-            <a class="left" href="#">Hacete Socio</a>
-            <a class="right" href="#">¿Olvidaste tus datos?</a>
+            <a class="left" href="#" ng-click="openExternal('https://mwfc.com.uy/contacto')">Hacete Socio</a>
+            <a class="right" href="#" ng-click="openExternal('https://mwfc.com.uy/area-de-socios/#cedula')">¿Olvidaste tus datos?</a>
 
             <div class="clearfix"></div>
           </div>
@@ -30,9 +30,13 @@
       </div>
     </section>
   </ion-content>
+  <style>
+    .scroll {
+      height: 100%;
+    }
+
+    div.container {
+      margin-top: 0px;
+    }
+  </style>
 </ion-view>
-<style>
-  .scroll {
-    height: 100%;
-  }
-</style>

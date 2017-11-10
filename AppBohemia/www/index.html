@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <!-- Allow everything but only from the same origin and foo.com -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' gap://ready http://mwfc.com.uy http://api.mwfc.com.uy  http://socios.mwfc.com.uy https://api.twitter.com http://pbs.twimg.com">
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -45,6 +48,8 @@
     <script src="js/services/fixtureFactory.js"></script>
     <script src="js/services/rewardsFactory.js"></script>
     <script src="js/services/betFactory.js"></script>
+    <script src="js/services/errorHandlerFactory.js"></script>
+
 
     <!-- Controllers js -->
     <script src="js/controllers/fixtureCtrl.js"></script>
@@ -60,6 +65,9 @@
     <script src="js/controllers/socialCtrl.js"></script>
     <script src="js/controllers/rewardsCtrl.js"></script>
 
+    <!-- Interceptors js  -->
+    <script src="js/interceptors/httpErrorHandler.js"></script>
+
     <script src="lib/angular-qrcode/angular-qrcode.js"></script>
     <script src="lib/qrcode-generator/js/qrcode.js"></script>
     <script src="lib/ng-cordova-oauth/dist/ng-cordova-oauth.min.js"></script>
@@ -72,23 +80,25 @@
 <body ng-app="app">
     <div class="wrapper">
         <div class="container">
-            <header>
-                <div class="top-menu">
-                    <a class="top-menu-btn" href="#/login"><img src="img/top-menu-icon.png" /></a>
-                    <ul>
-                        <li>item 1</li>
-                        <li>item 2</li>
-                    </ul>
-                </div>
-                <h1>Wanderers<span>App Oficial</span></h1>
 
-                <div class="brand"><img src="img/top-menu-brand.png" /></div>
-            </header>
             <!--<ion-nav-bar class="bar-positive">-->
             <!--</ion-nav-bar>-->
 
 
-            <ion-nav-view></ion-nav-view>
+            <ion-nav-view>
+                <header style="z-index:100">
+                    <div class="top-menu">
+                        <a class="top-menu-btn" href="#/login"><img src="img/top-menu-icon.png" /></a>
+                        <ul>
+                            <li>item 1</li>
+                            <li>item 2</li>
+                        </ul>
+                    </div>
+                    <h1>Wanderers<span>App Oficial</span></h1>
+
+                    <div class="brand"><img src="img/top-menu-brand.png" /></div>
+                </header>
+            </ion-nav-view>
             <section id="tab-bar" class="clearfix" ng-controller="tabsCtrl">
                 <div>
                     <div class="row">
@@ -129,12 +139,6 @@
                             </a>
                         </div>
                         <div class="col">
-                            <a href="#/license">
-                                <img src="img/menu/qr.png" ng-if="tab != 6" />
-                                <img src="img/menu/qr_a.png" ng-if="tab == 6" />
-                            </a>
-                        </div>
-                        <div class="col">
                             <a href="#/fixture">
                                 <img src="img/menu/callendar.png" ng-if="tab != 7" />
                                 <img src="img/menu/callendar_a.png" ng-if="tab == 7" />
@@ -147,10 +151,16 @@
                             </a>
                         </div>
                         <div class="col">
-                            <a href="#/rewards">
+                            <!-- <a href="#/license">
+                                <img src="img/menu/qr.png" ng-if="tab != 6" />
+                                <img src="img/menu/qr_a.png" ng-if="tab == 6" />
+                            </a> -->
+                        </div>
+                        <div class="col">
+                            <!-- <a href="#/rewards">
                                 <img src="img/menu/rewards.png" ng-if="tab != 9" />
                                 <img src="img/menu/rewards_a.png" ng-if="tab == 9" />
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>

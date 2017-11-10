@@ -90,7 +90,8 @@ div, a, ul, li, article, img {
 header {
   width: 100%;
   background-color: #ffffff;
-  position: relative;
+  position: fixed;
+  top: 0px;
   height: 67px;
   border-bottom: 1px solid black;
 }
@@ -260,7 +261,7 @@ section .top {
   display: block;
 }
 
-._tabs li a:hover, ._tabs li a.current {
+._tabs li a.current {
   background: transparent url(../img/tab-current.png) no-repeat scroll 50% bottom;
 }
 
@@ -275,6 +276,12 @@ section .top {
 .table .hr {
   border-top: 3px solid #000000;
   border-bottom: 3px solid #000000;
+}
+
+.table .hr.group {
+  background-color: black;
+  color: white;
+  border-bottom-color: white;
 }
 
 .table .hr ul {

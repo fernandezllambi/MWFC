@@ -5,13 +5,15 @@
         <div class="top"></div>
         <p class="tit-highlight">Posiciones</p>
         <!-- tabs -->
-        <ul class="_tabs clearfix">
+        <ul class="_tabs clearfix horizontal-scroll" style="display: -webkit-box; overflow-x: scroll">
           <li><a ng-click="setTab(0)" title="anual" ng-class="tabs[0] ? 'current' : ''">Anual</a></li>
-          <li><a ng-click="setTab(1)" title="clausura" ng-class="tabs[1] ? 'current' : ''">{{tables.current.name}}</a></li>
-          <li><a ng-click="setTab(2)" title="apertura" ng-class="tabs[2] ? 'current' : ''">{{tables.previous != null? tables.previous.name : 'Descenso'}}</a></li>
+          <li><a ng-click="setTab(1)" title="apertura" ng-class="tabs[1] ? 'current' : ''">Apertura</a></li>
+          <li><a ng-click="setTab(2)" title="intermedio" ng-class="tabs[2] ? 'current' : ''">Intermedio</a></li>
+          <li><a ng-click="setTab(3)" title="clausura" ng-class="tabs[3] ? 'current' : ''">Clausura</a></li>
+          <li><a ng-click="setTab(4)" title="descenso" ng-class="tabs[4] ? 'current' : ''">Descenso</a></li>
         </ul>
         <div class="inn">
-          <div class="table tabla show" ng-if="!decline">
+          <div class="table tabla show" ng-if="table.Nombre != 'Intermedio' && table.Nombre != 'Descenso'">
             <div class="hr">
               <ul>
                 <li class="posicion"> #</li>
@@ -27,39 +29,78 @@
               </ul>
             </div>
             <div class="td">
-              <ul id="{{equipo._key}}" ng-repeat="equipo in table.posiciones.equipo" ng-class="{'golden' : equipo._key == 'wanderers'}">
-                <li class="posicion">{{equipo._orden}}.</li>
-                <li class="escudo"><img src="img/teams/{{equipo._key}}.png"></li>
-                <li class="equipo">{{equipo.nombre}}</li>
-                <li>{{equipo.jugados}}</li>
-                <li>{{equipo.ganados}}</li>
-                <li>{{equipo.empatados}}</li>
-                <li>{{equipo.perdidos}}</li>
-                <li>{{equipo.golesfavor}}</li>
-                <li>{{equipo.golescontra}}</li>
-                <li>{{equipo.puntos}}</li>
+              <ul id="{{equipo.Key}}" ng-repeat="equipo in table.Grupos[0].Equipos" ng-class="{'golden' : equipo.Key == 'wanderers'}">
+                <li class="posicion">{{equipo.Orden}}.</li>
+                <li class="escudo"><img src="img/teams/{{equipo.Key}}.png"></li>
+                <li class="equipo">{{equipo.Nombre}}</li>
+                <li>{{equipo.Jugados}}</li>
+                <li>{{equipo.Ganados}}</li>
+                <li>{{equipo.Empatados}}</li>
+                <li>{{equipo.Perdidos}}</li>
+                <li>{{equipo.GolesFavor}}</li>
+                <li>{{equipo.GolesEncontra}}</li>
+                <li>{{equipo.Puntos}}</li>
               </ul>
             </div>
           </div>
-          <div class="table tabla show" ng-if="decline">
+          <div class="table tabla show" ng-if="table.Nombre == 'Descenso'">
             <div class="hr">
               <ul>
                 <li class="posicion"> #</li>
                 <li class="escudo"></li>
                 <li class="equipo"> Equipo</li>
                 <li>PJ</li>
+                <li>PG</li>
+                <li>PTS</li>
+                <li>PROM</li>
+              </ul>
+            </div>
+            <div class="td">
+              <ul id="{{equipo.Key}}" ng-repeat="equipo in table.Grupos[0].Equipos" ng-class="{'golden' : equipo.Key == 'wanderers'}">
+                <li class="posicion">{{equipo.Orden}}.</li>
+                <li class="escudo"><img src="img/teams/{{equipo.Key}}.png"></li>
+                <li class="equipo">{{equipo.Nombre}}</li>
+                <li>{{equipo.Jugados}}</li>
+                <li>{{equipo.Ganados}}</li>
+                <li>{{equipo.Puntos}}</li>
+                <li>{{equipo.PromedioDescenso | number:2}}</li>                
+              </ul>
+            </div>
+          </div>
+          <div ng-if="table.Nombre == 'Intermedio'">
+            <div class="table tabla show" ng-repeat="group in table.Grupos">
+            <div class="hr group">
+              <ul><li>{{group.Nombre}}</li></ul>
+            </div>
+            <div class="hr">
+              <ul>
+                <li class="posicion"> #</li>
+                <li class="escudo"></li>
+                <li class="equipo"> Equipo</li>
+                <li>PJ</li>
+                <li>PG</li>
+                <li>PE</li>
+                <li>PP</li>
+                <li>GF</li>
+                <li>GC</li>
                 <li>PTS</li>
               </ul>
             </div>
             <div class="td">
-              <ul id="{{declineTeam._key}}" ng-repeat="declineTeam in table.posiciones.equipo" ng-class="{'golden' : declineTeam._key == 'wanderers'}">
-                <li class="posicion">{{$index+1}}.</li>
-                <li class="escudo"><img src="img/teams/{{declineTeam._key}}.png"></li>
-                <li class="equipo">{{declineTeam.nombre}}</li>
-                <li>{{declineTeam.jugadosdescenso}}</li>
-                <li>{{declineTeam.puntosdescenso}}</li>
+              <ul id="{{equipo.Key}}" ng-repeat="equipo in group.Equipos" ng-class="{'golden' : equipo.Key == 'wanderers'}">
+                <li class="posicion">{{equipo.Orden}}.</li>
+                <li class="escudo"><img src="img/teams/{{equipo.Key}}.png"></li>
+                <li class="equipo">{{equipo.Nombre}}</li>
+                <li>{{equipo.Jugados}}</li>
+                <li>{{equipo.Ganados}}</li>
+                <li>{{equipo.Empatados}}</li>
+                <li>{{equipo.Perdidos}}</li>
+                <li>{{equipo.GolesFavor}}</li>
+                <li>{{equipo.GolesEncontra}}</li>
+                <li>{{equipo.Puntos}}</li>
               </ul>
             </div>
+          </div>
           </div>
         </div>
       </section>

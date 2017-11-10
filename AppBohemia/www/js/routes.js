@@ -1,6 +1,6 @@
 angular.module('app.routes', [])
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -13,10 +13,18 @@ angular.module('app.routes', [])
         controller: 'homeCtrl'
       })
 
+      //Lo comento para manter el original y que cuando se agregue los vagapuntos se vuelva a agregar
+      // .state('profile', {
+      //   url: '/profile',
+      //   templateUrl: 'templates/profile.html',
+      //   controller: 'profileCtrl',
+      //   params: {socio: null}
+      // })
+
       .state('profile', {
         url: '/profile',
-        templateUrl: 'templates/profile.html',
-        controller: 'profileCtrl',
+        templateUrl: 'templates/license.html',
+        controller: 'licenseCtrl',
         params: {socio: null}
       })
 
@@ -38,11 +46,11 @@ angular.module('app.routes', [])
         controller: 'loginCtrl'
       })
 
-      .state('license', {
-        url: '/license',
-        templateUrl: 'templates/license.html',
-        controller: 'licenseCtrl'
-      })
+      // .state('license', {
+      //   url: '/license',
+      //   templateUrl: 'templates/license.html',
+      //   controller: 'licenseCtrl'
+      // })
       .state('squad', {
         url: '/squad',
         templateUrl: 'templates/squad.html',
@@ -71,6 +79,5 @@ angular.module('app.routes', [])
       });;
 
     $urlRouterProvider.otherwise('home')
-
-
+    $httpProvider.interceptors.push('HttpInterceptor');
   });

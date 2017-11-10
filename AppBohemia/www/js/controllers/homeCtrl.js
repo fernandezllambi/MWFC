@@ -1,7 +1,7 @@
 /**
  * Created by Rod on 2/27/16.
  */
-controllers.controller('homeCtrl', function ($scope, $ionicLoading, $q, newsFactory, fixtureFactory) {
+controllers.controller('homeCtrl', function ($scope, $ionicLoading, $q, $cordovaInAppBrowser, newsFactory, fixtureFactory) {
   $scope.news = {};
   $scope.fechas = {};
 
@@ -74,9 +74,15 @@ controllers.controller('homeCtrl', function ($scope, $ionicLoading, $q, newsFact
     return str;
   };
 
+  $scope.newsClick = newsClick;
+
   function parseDate (str) {
     return str.substring(6, 8) + '/' + str.substring(4, 6);
   };
+
+  function newsClick(news){
+    $cordovaInAppBrowser.open(news.link, '_system');
+  }
 
 });
 

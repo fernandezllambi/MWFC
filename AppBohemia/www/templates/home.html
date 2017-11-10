@@ -1,13 +1,13 @@
 <ion-view title="Home">
   <ion-content overflow-scroll="true" padding="false">
     <div class="wrapper">
-      <div class="container">
+      <div class="container" id="home">
         <section id="news" class="area-news">
           <p class="tit-highlight">Noticias</p>
           <ion-slides options="options" class="news-reel">
               <ion-slide-page ng-repeat="new in news" >
                 <div>
-                  <div style="background:url({{new.img}}) no-repeat center center;height: 292px;background-size: auto 100%;"></div>
+                  <div ng-click="newsClick(new)" style="background:url({{new.img}}) no-repeat center center;height: 292px;background-size: auto 100%;"></div>
                     <div class="resume">{{toASCII(new.titulo)}}</div>
                 </div>
               </ion-slide-page>
@@ -19,7 +19,7 @@
               <div class="date">{{fecha.nombre}} - {{fecha.fecha}} <br/>{{fecha.nombreEstadio}}</div>
               <div class="teams clearfix">
                 <div class="team"><img src="img/teams/{{fecha.local._img}}.png"/></div>
-                <div class="numbers">{{fecha.goleslocal}}:{{fecha.golesvisitante}}</div>
+                <div class="numbers">{{fecha.goleslocal}}<span ng-if="fecha.goleslocal && fecha.golesvisitante">:</span>{{fecha.golesvisitante}}</div>
                 <div class="team"><img src="img/teams/{{fecha.visitante._img}}.png"/></div>
               </div>
             </li>

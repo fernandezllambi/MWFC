@@ -1,12 +1,19 @@
+/*  Ajustes de containers  */
 div.container {
-  padding-bottom: 200px !important;
+  margin-top: 33px;
+  padding-bottom: 110px !important;
 }
+
+div.container#home {
+  padding-bottom: 0px !important;
+}
+/*  Ajustes de containers  */
 
 .tit-highlight.invert {
   position: inherit;
   background-color: black;
   color: white;
-  width: 33%;
+  width: 50%;
   font-size: 1em;
 }
 
@@ -186,4 +193,14 @@ input.result {
   text-align: center;
   font-size: 60px;
   height: 85px;
+}
+
+ul._tabs.horizontal-scroll {
+  display: -webkit-box;
+  overflow-x: scroll;
+}
+
+ul._tabs.horizontal-scroll li {
+  display: list-item;
+  float: none;
 }

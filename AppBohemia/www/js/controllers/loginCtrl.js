@@ -1,7 +1,7 @@
 /**
  * Created by Rod on 2/27/16.
  */
-controllers.controller('loginCtrl', function ($scope, $state, loginFactory, $ionicLoading, $ionicPopup) {
+controllers.controller('loginCtrl', function ($scope, $state, loginFactory, $ionicLoading, $ionicPopup, $cordovaInAppBrowser) {
   $scope.$on("$ionicView.beforeLeave", function (scopes, states) {
     var header = document.getElementsByTagName('header')[0];
     header.style.display = 'block';
@@ -42,5 +42,9 @@ controllers.controller('loginCtrl', function ($scope, $state, loginFactory, $ion
       });
     });
   }
+
+  $scope.openExternal = function(link){
+    $cordovaInAppBrowser.open(link, '_system');
+  };
 
 });

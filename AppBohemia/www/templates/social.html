@@ -1,12 +1,16 @@
 <ion-view title="News">
   <ion-content overflow-scroll="true" padding="false">
-    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+    <ion-refresher ng-if="!error" on-refresh="doRefresh()"></ion-refresher>
     <div class="container">
       <section id="positions">
         <div class="top"></div>
         <p class="tit-highlight">Social</p>
         <div class="inn">
-          <div ng-repeat="entry in home_timeline" class="list card">
+          <div ng-if="error">
+            <h2>{{errorMessage}}</h2>
+            <button class="btn" ng-click="reLogin()">Reintentar</button>
+          </div>
+          <div ng-if="!error" ng-repeat="entry in home_timeline" class="list card">
             <div class="item item-avatar">
               <img ng-src="{{entry.user.profile_image_url}}"/>
 
